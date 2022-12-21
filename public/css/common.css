@@ -1,0 +1,207 @@
+/* Corpration symbol */
+
+.symbol{
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+  position: relative;
+  left: 0px;
+  top: 10px;
+  background:#305dff;
+  border-radius: 5px;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.45);
+  z-index: 11;
+}
+
+.symbol__line--top {
+  display: inline-block;
+  width: 25%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+}
+
+.symbol__line--middle{
+  display: inline-block;
+  width: 50%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+}
+
+.symbol__line--bottom {
+  display: inline-block;
+  width: 12.5%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+}
+
+.symbol__line--top {
+  left: 10px;
+  top: 12px;
+}
+
+.symbol__line--middle {
+  left: 10px;
+  top: 18px;
+}
+
+.symbol__line--bottom {
+  left: 10px;
+  top: 24px;
+}
+
+.symbol.open span:nth-of-type(1) {
+  top: 18px;
+  left: 10px;
+  width: 50%;
+  transform: rotate(45deg);
+}
+
+.symbol.open span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.symbol.open span:nth-of-type(3) {
+  top: 18px;
+  left: 10px;
+  width: 50%;
+  transform: rotate(-45deg);
+}
+
+.in {
+  transform: translateX(100%);
+}
+
+a {
+  text-decoration: none;
+  color: blue
+}
+
+.nav {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  left: -100%;
+  background: #eee;
+  transition: .7s;
+  text-align: center;
+  z-index: 10;
+}
+
+.nav ul {
+  padding-top: 80px;
+}
+
+.nav ul li {
+  list-style-type: none;
+  margin-top: 50px;
+  color: gray;
+  font-size: 30px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    padding: 15px 0;
+    color: #325aff;
+}
+
+.nav ul li a:hover {
+  color: blue;
+}
+
+.nav ul li a:link {
+  color: #325aff;
+}
+
+.nav ul li button {
+  border:none;
+  color: #325aff;
+  font-size: 30px;
+  background: transparent;
+}
+
+.nav ul li button:hover {
+  color: blue;
+}
+
+/* 店舗カード */
+.box {
+  width: 300px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+}
+
+.box img {
+  display: inline-block;
+  border-radius: 6px 6px 0 0;
+  width: 100%;
+}
+
+.box-card {
+  padding: 20px 20px;
+}
+
+.box-card-tle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box-card-key {
+  padding: 10px 0 15px;
+}
+
+.box-card-key span {
+  font-size: 12px;
+}
+
+.box-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-btn-lnk {
+  background: #305dff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 15px 10px;
+}
+
+.box-btn-lnk a {
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+}
+
+.box-btn button{
+  border:none ;
+  background: transparent;
+}
+
+/* heart */
+.heart {
+  width: 24px;
+  height: 24px;
+  clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+  transform: scale(1.5);
+}
+
+.heart_on{
+  background: red;
+}
+
+.heart_off{
+  background: #cfcfcf;
+}
+
+.heart_on:hover {
+  background:pink;
+}
+
+.heart_off:hover {
+  background: red;
+}

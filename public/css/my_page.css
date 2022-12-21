@@ -1,0 +1,183 @@
+/* index */
+
+body {
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* header */
+
+.header {
+  margin: 0 auto 20px;
+}
+
+.header_corp {
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #305dff;
+}
+
+/* main */
+
+.main__man{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 0 50px;
+}
+
+.main__items{
+  display: flex;
+}
+
+/* main - left */
+
+.main__items-left{
+  width: 450px;
+}
+
+.main__items-left-tle{
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.main__items-left-list{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__items-left-list-card{
+  background: #305dff;
+  border-radius: 7px;
+  padding: 30px 30px;
+  color: white;
+  width: 400px;
+  margin-top: 10px;
+}
+
+.main__items-left-list-card:not(:nth-child(1)) {
+  background: #305dff;
+  border-radius: 7px;
+  padding: 30px 30px;
+  color: white;
+  width: 400px;
+}
+
+.main__items-left-list-card-top{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.main__items-left-list-card-top-tle{
+  display: inline-block;
+}
+
+.main__items-left-list-card-top-tle-img{
+  display: inline-block;
+}
+
+.main__items-left-list-card-top-tle-img img{
+  width: 15%;
+  display:inline-block;
+  cursor: pointer;
+}
+
+.main__items-left-list-card-top p {
+  display: inline-block;
+  position: relative;
+  margin: 5px 0 0 65px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.main__items-left-list-card-top p:before {
+  content: url("../images/clock.png");
+  padding-right:30px;
+  position: absolute;
+  top: -7px;
+  left: -65px;
+}
+
+.main__items-left-list-card-top-link img{
+  width:80%;
+  filter: grayscale(100%);
+}
+
+.main__items-left-list-card-top-link img:hover {
+  filter: grayscale(0%);
+}
+
+.main__items-left-list-card-line{
+  padding: 12px 0 ;
+}
+
+.main__items-left-list-card-line label{
+  display: inline-block;
+  width: 100px;
+}
+
+.main__items-left-list-card-line p {
+  display: inline-block;
+  width: 100px;
+}
+
+/* main - right */
+
+.main__items-right {
+  margin-left: 92px;
+  width:calc(100% - 500px);
+}
+
+.main__items-right-tle{
+  font-size: 23px;
+  font-weight: 600;
+  margin-left:8px;
+}
+
+.main__items-right-list{
+  margin-top: 40px;
+  display: flex ;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 30px;
+}
+
+@media screen and (max-width:1100px) {
+  body {
+    margin: 30px 75px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  body {
+    margin: 30px 30px;
+  }
+
+  .main__items {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .main__items-left {
+    width: 100%;
+  }
+
+  .main__items-left-list{
+    margin-left: calc(50% - 230px);
+  }
+
+  .main__items-right{
+    margin: 30px 0 0 0;
+    width: 100%;
+  }
+
+  .main__items-right-list {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,135 @@
+/* index */
+
+body{
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* header */
+
+.header{
+  display:flex ;
+  justify-content: space-between;
+  margin: 0 auto 20px;
+}
+
+.header__corp{
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color : #305dff;
+}
+
+.header__right{
+  display: flex;
+}
+
+.header__right-box{
+  padding: 3px;
+  background: white;
+  border: 1px #e0e0e0 solid;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+  vertical-align: middle;
+}
+
+.header__right-box-select{
+  font-size: 15px;
+  padding: 7px 0 7px 10px;
+  border:none;
+  display: inline-block;
+  width: 100px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url(../images/down16.png);
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  background-color: white;
+  font-size: 13px; 
+  position: relative;
+  border-right: 1px #efefef solid;
+  color: #2f2f2f;
+}
+
+.header__right-box-inp{
+  display:inline-block;
+}
+
+.header__right-box-inp img {
+  width: 20px;
+  height: 20px;
+  vertical-align : middle ;
+  color:rgba(0, 0, 0, 0.45);
+  margin-left: 3px;
+}
+
+.header__right-box-inp input {
+  font-size: 14px;
+  margin-left: 5px;
+  border: none;
+  height: 40px;
+  display: inline-block;
+  width: 350px;
+  outline: none;
+}
+
+/* main list */
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: space-around;*/
+  justify-content: space-between;
+  gap: 25px 15px;
+  width: 100%;
+}
+
+/* dummy box */
+.dummybox{
+  display: none ;
+}
+
+@media screen and (max-width:960px) {
+  .header {
+    flex-flow: column;
+  }
+
+  .header__right {
+    width: 100%;
+  }
+
+  .header__right-box {
+    margin: 10px 0 0 auto;
+  }
+}
+
+@media screen and (max-width:860px) {
+  body {
+    margin: 30px 50px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  body {
+    margin: 30px 30px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  body {
+    margin: 30px 30px;
+  }
+
+  .list {
+    gap: 10px 10px;
+  }
+
+  .header__right-box-inp input {
+    width: calc(100% - 50px);
+  }
+}
