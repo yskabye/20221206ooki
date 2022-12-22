@@ -140,3 +140,14 @@ body {
   line-height: 25px;
 }
 
+@media screen and (max-width:400px) {
+  body {
+    margin: 30px 20px;
+  }
+
+  .main__box {
+    width: 99%;
+    left: 1px;
+    top: 200px;
+  }
+}

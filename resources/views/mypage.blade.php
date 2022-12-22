@@ -21,12 +21,14 @@
     </ul>
   </nav>
 
-  <div class="symbol" id="symbol">
-    <span class="symbol__line--top"></span>
-    <span class="symbol__line--middle"></span>
-    <span class="symbol__line--bottom"></span>
-  </div>
-  <h1 class="header_corp">Rese</h1>
+  <div class="header__mark">
+    <div class="symbol" id="symbol">
+      <span class="symbol__line--top"></span>
+      <span class="symbol__line--middle"></span>
+      <span class="symbol__line--bottom"></span>
+    </div>
+    <h1 class="header__mark-corp">Rese</h1>
+  <div>
 </div>
 
 <h2 class="main__man">{{ $user->name }}さん</h2>
@@ -69,6 +71,7 @@
 
   <div class="main__items-right">
     <h3 class="main__items-right-tle">お気に入り店舗</h3>
+    <input type="hidden" name="favorite_num" value={{ count($favorites) }}>
     <div class="main__items-right-list">
 
       @foreach($favorites as $favorite => $data)
@@ -91,7 +94,11 @@
           </div>
         </div>
       </div>
+
       @endforeach
+
+      <div class="dumybox1"></div>
+      <div class="dumybox2"></div>
 
     </div>
   </div>

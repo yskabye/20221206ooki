@@ -1,3 +1,19 @@
+$(window).on("load", function() {
+	// 再度、横幅と高さを取得
+	width = $(window).width();
+  height = $(window).height();
+  
+  adjustDummy(width);
+});
+
+$(window).on("resize", function () {
+	// 再度、横幅と高さを取得
+	width = $(window).width();
+  height = $(window).height();
+  
+  adjustDummy(width);
+});
+
 $('.main__items-left-list-card-top-link').click(function () {
   var key = $(this).parent().find('input[name="reserve_id"]');
   var mybox = $(this).parent().parent();
@@ -51,3 +67,22 @@ $('.heart').click(function () {
   });
 
 });
+
+function adjustDummy(width) {
+  var cut = 1;
+  if (width >= 1702)
+    cut = 3;
+  else if (width >= 1372)
+    cut = 2;
+  
+  var allnum = $('input[name="favorite_num"]').val();
+  
+  var remain = allnum % cut;
+
+  if (cut - remain > 0) {
+    $('.dumybox1').css('display', 'inline-block');
+    if (cut - remain > 1) {
+      $('.dumybox2').css('display', 'inline-block');
+    }
+  }
+}
