@@ -27,6 +27,8 @@ Route::get('/detail/{id}', [RestrantController::class, 'detail']);
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/done', [ReserveController::class, 'create']);
     Route::get('/mypage', [FavoriteController::class, 'mypage']);
+    Route::get('/update', [ReserveController::class, 'correct']);
+    Route::post('/redone', [ReserveController::class, 'update']);
 });
 
 require __DIR__ . '/auth.php';

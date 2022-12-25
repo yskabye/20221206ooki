@@ -1,4 +1,23 @@
-$(window).on("load", function() {
+$(window).on("load", function () {
+  /*$('.tooltip').hide();
+  $('.main__items-left-list-card-top-left-icon').hover(
+    function () {
+      $(this).children('.tooltip').fadeIn('fast')
+    },
+    function () {
+      $(this).children('.tooltip').fadeOut('fast');
+    }
+  );
+
+  $('.main__items-left-list-card-top-link').hover(
+    function () {
+      $(this).children('.tooltip').fadeIn('fast');
+    },
+    function () {
+      $(this).children('.tooltip').fadeOut('fast');  
+    }
+  );2022.12.23 保留*/
+
 	// 再度、横幅と高さを取得
 	width = $(window).width();
   height = $(window).height();
@@ -86,3 +105,5 @@ function adjustDummy(width) {
     }
   }
 }
+
+

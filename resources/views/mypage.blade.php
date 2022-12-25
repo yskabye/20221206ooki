@@ -41,10 +41,20 @@
       <input type="hidden" name="reserve_num" value={{ count($reserves) }}>
 
       @foreach($reserves as $reserve => $data)
-      <div class="main__items-left-list-card" id="rsv{{ $loop->index }}">
+      <form method="get" action="./update" class="main__items-left-list-card" id="rsv{{ $loop->index }}">
+        @csrf
         <div class="main__items-left-list-card-top">
-          <p>予約{{ $loop->index + 1 }}</p>
-          <div class="main__items-left-list-card-top-link"><img src="images/close32.png"></div>
+          <div class="main__items-left-list-card-top-left">
+            <div class="main__items-left-list-card-top-left-icon">
+              <button type="submit"></button>
+              <!--p class="tooltip">予約の更新</p-->
+            </div>
+            <p>予約{{ $loop->index + 1 }}</p>
+          </div>
+          <div class="main__items-left-list-card-top-link">
+            <img src="images/close32.png">
+            <!--p class="tooltip">予約の削除</p-->
+          </div>
           <input type="hidden" name="reserve_id" value={{$data->id}}>
         </div>
         <div class="main__items-left-list-card-line">
@@ -63,7 +73,7 @@
           <label>Number</label>
           <p>{{ $data->people_num }}人</p>
         </div>
-      </div>
+      </form>
       @endforeach
 
     </div>

@@ -92,21 +92,57 @@ body {
   cursor: pointer;
 }
 
-.main__items-left-list-card-top p {
-  display: inline-block;
+/*** 2022/12/23 アイコンを利用のため Start*/
+.main__items-left-list-card-top-left-icon{
+  display:inline-block;
+  width: 32px;
+  height: 32px;
   position: relative;
-  margin: 5px 0 0 65px;
-  font-size: 16px;
-  font-weight: normal;
 }
 
-.main__items-left-list-card-top p:before {
+.main__items-left-list-card-top-left-icon button{
+  width: 100%;
+  display: inline-block;
+  height: 32px;
+  border: none ;
+  background: transparent;
+  background-image: url(../images/clock.png) ;
+  background-repeat : no-repeat;
+}
+
+.main__items-left-list-card-top-left-icon button:hover {
+  background-image: url(../images/update.png) ;
+}
+/*** 2022/12/23 アイコンを利用のため End*/
+
+/*.main__items-left-list-card-top p { 2022.12.23 Update*/
+.main__items-left-list-card-top-left p{
+  display: inline-block;
+  /*position: relative; 2022.12.23 Del*/
+  /*margin: 5px 0 0 65px;2022.12.23 Update*/
+  margin: 0 0 0 30px;
+  font-size: 16px;
+  font-weight: normal;
+  /* 追加 2022.12.23 Add start*/
+  width: 50px;
+  height: 35px;
+  vertical-align: middle ;
+  /* 追加 2022.12.23 Add end*/
+}
+
+/*.main__items-left-list-card-top p:before {
   content: url("../images/clock.png");
   padding-right:30px;
   position: absolute;
   top: -7px;
   left: -65px;
+} 2022/12/23 Del*/
+
+/* 追加 2022.12.23 Add start*/
+.main__items-left-list-card-top-link{
+  position: relative;
 }
+/* 追加 2022.12.23 Add end*/
 
 .main__items-left-list-card-top-link img{
   width:80%;
