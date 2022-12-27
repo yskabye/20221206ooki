@@ -16,9 +16,9 @@ class ReserveController extends Controller
     $form = $request->all();
     Reserve::create(($form));
 
-    $userid = Auth::id();
+    $user = Auth::user();
 
-    return view('done', ['userid' => $userid]);
+    return view('done', ['user' => $user]);
   }
 
   public function update(ReserveRequest $request)
@@ -29,9 +29,9 @@ class ReserveController extends Controller
     unset($form['holiday']);
     Reserve::where('id', $request->id)->update($form);
 
-    $userid = Auth::id();
+    $user = Auth::user();
 
-    return view('redone', ['userid' => $userid]);
+    return view('redone', ['user' => $user]);
   }
 
   public function destroy(Reserve $reserve)
@@ -50,7 +50,7 @@ class ReserveController extends Controller
 
   public function correct(Request $request)
   {
-      $user = Auth::id();
+      $user = Auth::user();
 
       $reserve = Reserve::with('restrant')
           ->find($request->reserve_id);
@@ -69,7 +69,7 @@ class ReserveController extends Controller
       $shop->rsv_start = new Carbon($shop->rsv_start);
       $shop->rsv_end = new Carbon($shop->rsv_end);
 
-      return view('update', ['userid' => $user, 'reserve' => $reserve, 'shop' => $shop]);
+      return view('update', ['user' => $user, 'reserve' => $reserve, 'shop' => $shop]);
   }
 
 }

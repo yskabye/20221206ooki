@@ -14,7 +14,7 @@ class RestrantController extends Controller
 {
     public function index(Request $request)
     {
-        $user = Auth::id();
+        $user = Auth::user();
         $areas = Area::all();
         $genres = Genre::all();
 
@@ -37,12 +37,12 @@ class RestrantController extends Controller
             array_push($favorites, ['flag' => $flg, 'id' => $id]);
         }
 
-        return view('index', ['userid' => $user, 'shops' => $shops, 'areas' => $areas, 'genres' => $genres, 'favorites' => $favorites]);
+        return view('index', ['user' => $user, 'shops' => $shops, 'areas' => $areas, 'genres' => $genres, 'favorites' => $favorites]);
     }
 
     public function detail($id)
     {
-        $user = Auth::id();
+        $user = Auth::user();
 
         $shop = Restrant::with('area')
             ->with('genre')
@@ -58,6 +58,6 @@ class RestrantController extends Controller
         $shop->rsv_start = new Carbon($shop->rsv_start);
         $shop->rsv_end = new Carbon($shop->rsv_end);
 
-        return view('detail', ['userid' => $user, 'shop' => $shop]);
+        return view('detail', ['user' => $user, 'shop' => $shop]);
     }
 }

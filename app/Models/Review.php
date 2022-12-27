@@ -5,29 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reserve extends Model
+class Review extends Model
 {
     use HasFactory;
 
     protected $guarded = array('id');
 
     protected $fillable = [
-        'user_id',
-        'reserve_date',
-        'reserve_time',
-        'restrant_id',
-        'people_num',
-        'liquid_id',
+        'reserve_id',
+        'values',
+        'comment',
     ];
 
     public function restrant()
     {
         return $this->belongsTo('App\Models\Restrant');
     }
-
-    public function review()
-    {
-        return $this->hasOne('App\Models\Review');
-    }
-
 }

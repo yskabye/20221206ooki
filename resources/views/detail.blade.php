@@ -10,26 +10,7 @@
 @section('content')
 <div class="main">
   <div class="main__left">
-
-    <nav class="nav" id="nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        @empty($userid)
-        <li><a href="/register">Registration</a></li>
-        <li><a href="/login">Login</a></li>
-        @else
-        <li>
-          <form method="post" action="/logout">
-            @csrf
-            <input type="hidden" name="user_id" value="{{ $userid }}">
-            <button type="submit">Logout</button>
-          </form>
-        </li>
-        <li><a href="/mypage">Mypage</a></li>
-        @endif
-
-      </ul>
-    </nav>
+    @include('layouts.menu')
 
     <div class="main__left-symbol">
       <div class="symbol" id="symbol">

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::delete('/v1/favorite/{id}', [FavoriteController::class, 'destroy']);
 Route::apiResource('/v1/reserve', ReserveController::class)->only([
     'destroy'
 ]);
+
+Route::post('v1/review', [ReviewController::class, 'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

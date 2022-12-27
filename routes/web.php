@@ -6,6 +6,7 @@ use App\Http\Controllers\RestrantController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/mypage', [FavoriteController::class, 'mypage']);
     Route::get('/update', [ReserveController::class, 'correct']);
     Route::post('/redone', [ReserveController::class, 'update']);
+    Route::get('/history', [ReviewController::class, 'dsphistory']);
 });
 
 require __DIR__ . '/auth.php';

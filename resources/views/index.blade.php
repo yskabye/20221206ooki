@@ -7,24 +7,7 @@
 
 @section('content')
 <div class="header">
-  <nav class="nav" id="nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      @empty($userid)
-      <li><a href="/register">Registration</a></li>
-      <li><a href="/login">Login</a></li>
-      @else
-      <li>
-        <form method="post" action="/logout">
-          @csrf
-          <input type="hidden" name="user_id" value="{{ $userid }}">
-     <button type="submit">Logout</button>
-        </form>
-      </li>
-     <li><a href="/mypage">Mypage</a></li>
-      @endif
-    </ul>
-  </nav>
+ @include('layouts.menu')
 
   <div class="header__left">
     <div class="symbol" id="symbol">
@@ -66,7 +49,11 @@
     <div class="box-card">
       <h4 class="box-card-tle">{{ $data->name }}</h4>
     @csrf
-      <input type="hidden" name="user_id" value="{{ $userid }}">
+      @empty($user->id)
+      <input type="hidden" name="user_id" value="">
+      @else
+      <input type="hidden" name="user_id" value="{{ $user->id }}">
+      @endif
       <input type="hidden" name="restrant_id" value="{{ 
     $data->id }}">
      <input type="hidden" name="shop_name" value="{{ $data->name }}">

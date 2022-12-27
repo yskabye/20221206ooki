@@ -7,19 +7,7 @@
 
 @section('content')
 <div class="header">
-  <nav class="nav" id="nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li>
-        <form method="post" action="/logout">
-          @csrf
-          <input type="hidden" name="user_id" value="{{ $userid }}">
-          <button type="submit">Logout</button>
-        </form>
-      </li>
-      <li><a href="/mypage">Mypage</a></li>
-    </ul>
-  </nav>
+ @include('layouts.menu')
 
   <div class="symbol" id="symbol">
     <span class="symbol__line--top"></span>
