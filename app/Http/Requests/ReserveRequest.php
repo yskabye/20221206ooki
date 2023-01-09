@@ -35,7 +35,7 @@ class ReserveRequest extends FormRequest
     public function messages()
     {
         return [
-            'user_id.required' => 'ログインがして下さい。',
+            'user_id.required' => 'ログインして下さい。',
             'restrant_id.required' => '対象となるレストランを指定してください。',
             'reserve_date.required' => '予約日は必ず指定してください。',
             'reserve_date.date' => '予約日は正常な日付で指定してください。',

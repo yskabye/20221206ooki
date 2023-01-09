@@ -75,7 +75,7 @@
 
       @foreach($favorites as $favorite => $data)
       <div class="box">
-        <img src="images/{{ $data->image }}">
+        <img src="images/store/{{ $data->image }}">
         <div class="box-card">
           <h4 class="box-card-tle">{{ $data->name }}</h4>
           <div class="box-card-key">

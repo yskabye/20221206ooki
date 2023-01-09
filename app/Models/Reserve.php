@@ -30,4 +30,8 @@ class Reserve extends Model
         return $this->hasOne('App\Models\Review');
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

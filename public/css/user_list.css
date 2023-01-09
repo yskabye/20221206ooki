@@ -1,0 +1,150 @@
+/* index */
+
+body{
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow: none;
+}
+
+
+/* header */
+
+.header{
+  margin: 0 auto 20px;
+}
+
+.header__mark-corp{
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color : #305dff;
+}
+
+/* main list */
+
+.main{
+  width: 100%;
+}
+
+.main__newbtn{
+  margin: 0 auto;
+  width:min(100%, 745px);
+  text-align: right;
+}
+
+.main__newbtn button{
+  background: transparent;
+  background-image: url(../images/add.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 3px;
+}
+
+.main__table{
+  width: 755px;
+  margin: 0 auto;
+}
+
+.main__table-header{
+  margin-top:15px;
+  display: flex;
+}
+
+.main__table-header p:nth-child(1) {
+  width: 200px;
+  margin-left: 50px;
+}
+
+.main__table-header p:nth-child(2) {
+  width: 275px;
+}
+
+.main__table-header p:nth-child(3) {
+  width: 175px;
+}
+
+.main__table hr {
+  margin: 5px 0;
+}
+
+.main__table-lists{
+  background: #305dff;
+  border-radius: 5px;
+  color: white;
+  height: calc(100vh - 225px);
+  padding: 10px 15px 10px 15px;
+}
+
+.main__table-lists-area{
+  width: 725px;
+  height: calc(100vh - 235px);
+  overflow: auto;
+}
+
+.main__table-lists-area-line{
+  display: flex;
+  height: 36px;
+  align-items: center;
+}
+
+.main__table-lists-area-line-editbtn {
+  background: #fcfcfc;
+  background-image:url(../images/edit.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  border: 1px #cfcfcf solid;
+  border-radius: 3px;
+}
+
+.main__table-lists-area-line p:nth-of-type(1){
+  margin-left: 10px;
+  width: 200px;
+}
+
+.main__table-lists-area-line p:nth-of-type(2) {
+  width: 275px;
+}
+
+.main__table-lists-area-line p:nth-of-type(3) {
+  width: 175px;
+}
+
+.main__table-lists-area-line-delbtn {
+  background: #fcfcfc;
+  background-image: url(../images/remove.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  border: 1px #cfcfcf solid;
+  border-radius: 3px;
+}
+
+@media screen and (max-width:965px) {
+  body {
+    margin: 30px calc(50vw - 385px);
+  }
+}
+
+@media screen and (max-width:825px) {
+  body {
+    margin: 30px 10px;
+  }
+
+  .header {
+    margin: 0 20px 20px;
+  }
+
+  .main {
+    width: calc(100%-5px);
+    overflow-x:hidden;
+    overflow-x: scroll;
+  }
+}

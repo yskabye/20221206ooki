@@ -33,7 +33,13 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         //return redirect()->intended(RouteServiceProvider::HOME);
-        return back();
+        $user = Auth::user();
+        if($user->type_id == 5)
+            return redirect('/admin/rsv_list');
+        else if($user->type_id == 9)
+            return redirect('/admin/user_list');
+        else
+            return back();
     }
 
     /**

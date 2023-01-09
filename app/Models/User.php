@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'type_id',
+        'restrant_id',          // 2022.12.28 追加1
     ];
 
     /**
@@ -48,5 +49,14 @@ class User extends Authenticatable
         return $this->hasMany(Favorite::class);
     }
 
+    public function restrant()
+    {
+        return $this->belongsTo(Restrant::class);
+    }
+
+    public function type()
+    {
+        return $this->hasOne(Type::class);
+    }
 
 }

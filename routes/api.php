@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,9 @@ Route::apiResource('/v1/reserve', ReserveController::class)->only([
     'destroy'
 ]);
 
-Route::post('v1/review', [ReviewController::class, 'store']);
+Route::post('/v1/review', [ReviewController::class, 'store']);
+
+Route::delete('/v1/user/{id}', [UserController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

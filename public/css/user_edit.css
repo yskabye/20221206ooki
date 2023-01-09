@@ -1,0 +1,155 @@
+/* index */
+
+body{
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* header */
+
+.header{
+  margin: 0 auto 30px;
+}
+
+.header__mark-corp{
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color : #305dff;
+}
+
+/* main list */
+
+.main {
+  margin-top: 50px;
+}
+
+.main__input {
+  width: 360px;
+  margin: 0 auto;
+  overflow-y: auto;
+  background: #305dff;
+  border-radius: 5px;
+  color:white;
+  padding: 50px ;
+}
+
+.main__input-btn{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  padding: 0 0 35px 0;
+}
+
+.main__input-btn-savebtn{
+  background: white;
+  background-image: url(../images/save.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 3px;
+}
+
+.main__lists-btn-backbtn {
+  background: #fcfcfc;
+  background-image: url(../images/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 33px;
+  height: 33px;
+  border: 1px #cfcfcf solid;
+  border-radius: 3px;
+}
+
+.main__input-line{
+  height: 50px;
+  vertical-align: middle ;
+  text-align: center;
+}
+
+.main__input-line label {
+  display: inline-block;
+  width: 125px;
+  text-align: left;
+}
+
+.main__input-line input {
+  width: 200px;
+  height: 23px;
+  border-radius: 5px;
+  border: 1px #cfcfcf solid;
+  font-size:14px;
+}
+
+.main__input-line select {
+  width: 205px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px #cfcfcf solid;
+  font-size: 14px;
+}
+
+@media screen and (max-width:600px) {
+  body {
+    margin: 30px 30px;
+  }
+}
+
+@media screen and (max-width:420px) {
+  body {
+    margin: 30px 0;
+  }
+
+  .header {
+    margin: 0 20px 30px;
+  }
+
+  .main__input {
+    padding: 15px;
+    width: calc(100vw - 30px);
+  }
+}
+
+@media screen and (max-width:390px) {
+  .main__input-line label {
+    display: inline-block;
+    width: 120px;
+  }
+
+  .main__input-line input {
+    width: 175px;
+  }
+
+  .main__input-line select {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .main__input {
+    padding: 5px;
+    width: calc(100vw - 10px);
+  }
+
+  .main__input-btn-savebtn,
+  .main__lists-btn-backbtn {
+    margin: 5px 5px;
+  }
+
+  .main__input-line label {
+    display: inline-block;
+    width: 115px;
+  }
+
+  .main__input-line input {
+    width: 145px;
+  }
+
+  .main__input-line select {
+    width: 145px;
+  }
+}

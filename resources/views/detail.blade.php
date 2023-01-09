@@ -27,7 +27,7 @@
     </div>
 
     <div class="main__left-detail">
-      <img src="../images/{{ $shop->image }}" alt="{{ $shop->image }}">
+      <img src="../images/store/{{ $shop->image }}" alt="{{ $shop->image }}">
       <div class="main__left-detail-key">
         <span>#{{ $shop->area->name }}</span>
         <span>#{{ $shop->genre->name }}</span>
@@ -42,7 +42,7 @@
     <div class="main__right-form">
       <h3 class="main__right-form-tle">予約</h3>
       @csrf
-      <input type="hidden" name="user_id" value="{{ $userid }}">
+      <input type="hidden" name="user_id" value="{{ empty($user->id)?'':$user->id }}">
       <input type="hidden" name="restrant_id" value="{{ $shop->id }}">
       <input type="date" name="reserve_date" value="{{ old('reserve_date') }}"
         min="{{$shop->rsv_date->format('Y-m-d')}}" max="{{$shop->rsv_limit->format('Y-m-d')}}">

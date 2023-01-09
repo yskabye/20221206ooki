@@ -233,3 +233,57 @@ a {
   border-width: 8px;
   margin-top: -8px;
 }*/
+
+/* エラーメッセージ */
+
+.errmsg{
+  color: #FF66FF;
+  line-height: 115%;
+}
+
+.errmsgx {
+  margin: -10px 0 25px 15px;
+  color: #FF66FF;
+  line-height: 120%;
+}
+
+/* 確認メッセージ */
+
+.dialog{
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 150px);
+  background: white;
+  border-radius: 10px;
+  color: black;
+  display: none;
+}
+
+.dialog p{
+  text-align : center;
+  margin: 50px 0  35px;
+}
+
+.dialog_btn{
+  display: flex ;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.dialog_OK, .dialog_Cancel {
+  width: 55px;
+  height: 30px;
+  background: #6699CC ;
+  color: white;
+  border-radius: 5px;
+  border: 1px #cfcfcf solid;
+}
+
+.dialog_OK:hover,
+.dialog_Cancel:hover {
+  background: #0099FF;
+  color: black;
+}
