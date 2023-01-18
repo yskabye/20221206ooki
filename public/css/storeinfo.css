@@ -26,7 +26,7 @@ body{
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  padding: 10px 0 50px;
+  padding: 10px 0 25px;
 }
 
 /* main */
@@ -115,6 +115,15 @@ body{
   width: 110px;
 }
 
+.main__input1-left-line input {
+  width: 190px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px #cfcfcf solid;
+  padding-left: 5px;
+  font-size: 13px;
+}
+
 .main__input1-left-line select {
   width: 200px;
   height: 25px;
@@ -124,14 +133,46 @@ body{
   font-size: 13px;
 }
 
+.main__input1-left-upload {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 10px 40px;
+}
+
+.main__input1-left-upload label {
+  font-weight: 500;
+  font-size: 13px;
+  padding: 5px 10px;
+  width: 180px;
+  background: #0000c8;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #1f1f7f;
+  border-radius: 5px;
+  margin-left: 65px;
+  text-align: center;
+}
+
+.main__input1-left-upload label:hover {
+  background: #3f3fc8;
+  box-shadow: 1px 1px 1px 1px #7f7fff;
+}
+
+.main__input1-left-upload input[type="flle"] {
+  display: none;
+}
+
+#upload {
+  display: none;
+}
+
 .main__input1-right img{
   width: 100%;
-  height: 100%;
   margin-left: 40px;
 }
 
+
 .main__input2{
-  margin-top : 25px;
+  margin-top : 10px;
   height: 100px;
   vertical-align: middle;
 }

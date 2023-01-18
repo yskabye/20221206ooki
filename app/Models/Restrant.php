@@ -14,7 +14,7 @@ class Restrant extends Model
     protected $fillable = [
         'name',
         'area_id',
-        'ganre_id',
+        'genre_id',
         'overview',
         'image',
         'period',

@@ -37,6 +37,7 @@ class RestrantRequest extends FormRequest
             'timespan' => ['required'],
             'rsv_min' => ['required', 'integer', 'min:1', 'max:'.$this['rsv_max']],
             'rsv_max' => ['required', 'integer', 'min:'.$this['rsv_min'], 'max:30'],
+            'upfile' => ['file'],
         ];
     }
 

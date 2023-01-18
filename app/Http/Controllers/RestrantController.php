@@ -10,10 +10,14 @@ use App\Models\Genre;
 use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Storage;
+
+define("IMAGEDIR", "../public/storage/images");
 
 class RestrantController extends Controller
 {
-    public function index(Request $request)
+     public function index(Request $request)
     {
         $user = Auth::user();
         $areas = Area::all();
@@ -59,7 +63,47 @@ class RestrantController extends Controller
         $shop->rsv_start = new Carbon($shop->rsv_start);
         $shop->rsv_end = new Carbon($shop->rsv_end);
 
-        return view('detail', ['user' => $user, 'shop' => $shop]);
+        // レビュー追加 2023.1.16
+        $sql = "select reviews.values, reviews.comment, users.name, " .
+               "reserves.reserve_date, reserves.reserve_time from reviews " .
+               "inner join reserves on reserves.id = reviews.reserve_id " .
+               "and reserves.restrant_id = " . $id .
+               " inner join users on reserves.user_id = users.id " .
+               "order by reserves.reserve_date, reserves.reserve_time";
+
+        $reviews = \DB::select($sql,[$id]);
+        $total = count($reviews);
+
+        foreach($reviews as $review){
+            $review->reserve_date = new Carbon($review->reserve_date);
+            $review->reserve_time = new Carbon($review->reserve_time);
+        }
+
+        $currentPage = Paginator::resolveCurrentPage();
+        $perPage = 5;
+        $results = \DB::select("{$sql} LIMIT :per_page OFFSET :offset", [
+            'per_page' => $perPage,
+            'offset' => $currentPage * $perPage - $perPage
+        ]);
+
+        // LengthAwarePaginatorのインタスタンスを取得
+        $pagination = new  \Illuminate\Pagination\LengthAwarePaginator(
+            $results,
+            $total,
+            $perPage,
+            $currentPage,
+            [
+                'path' => sprintf(
+                    '%s%s',
+                    request()->url(),
+                    request()->except('page')
+                        ? '?' . http_build_query(request()->except('page'))
+                        : ''
+                )
+            ]
+        );
+
+        return view('detail', ['user' => $user, 'shop' => $shop, 'reviews' => $pagination]);
     }
 
     public function editstore()
@@ -77,23 +121,21 @@ class RestrantController extends Controller
         $genres = Genre::all();
 
         $holiday = array(['id' => 0, 'name' => 'なし'],
-                         ['id' => 1, 'name' => '日'],
-                         ['id' => 2, 'name' => '月'],
-                         ['id' => 3, 'name' => '火'],
-                         ['id' => 4, 'name' => '水'],
-                         ['id' => 5, 'name' => '木'],
-                         ['id' => 6, 'name' => '金'],
-                         ['id' => 7, 'name' => '土'] );
+                         ['id' => 7, 'name' => '日'],
+                         ['id' => 1, 'name' => '月'],
+                         ['id' => 2, 'name' => '火'],
+                         ['id' => 3, 'name' => '水'],
+                         ['id' => 4, 'name' => '木'],
+                         ['id' => 5, 'name' => '金'],
+                         ['id' => 6, 'name' => '土'] );
 
-        $dir = resource_path('../public/images/store') ;
-        $files = glob($dir . '/*.jpg') ;
+        $dir = resource_path(IMAGEDIR) ;
+        $files = glob($dir . '/{*.jpg,*.jpeg}', GLOB_BRACE) ;
         $images = [];
 
         foreach($files as $file){
             $images[] = basename($file); 
         }
-
-        $restrant->profile = str_replace($restrant->profile, '¥¥n', '¥n');
 
         return view('admin.storeinfo',['user' => $user, 'restrant' => $restrant, 'areas' => $areas, 'genres' => $genres, 'holidays' => $holiday,'images' => $images]);
     }
@@ -101,7 +143,18 @@ class RestrantController extends Controller
     public function update(RestrantRequest $request)
     {
         $form = $request->all();
+
+        // 画像ファイルがサーバーにない場合はアップロードする
+        $dir = resource_path(IMAGEDIR) ;
+        if(!(file_exists($dir . '/' . $form['image']))){
+            if(!empty($form['upfile'])){
+                $fname = $request->file('upfile')->getClientOriginalName();
+                $request->file('upfile')->storeAs('public/images', $fname);
+            }
+        }        
+
         unset($form['_token']);
+        unset($form['upfile']);
 
         Restrant::where('id', $request->id)->update($form);
 

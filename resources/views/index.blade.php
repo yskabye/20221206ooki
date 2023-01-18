@@ -45,7 +45,7 @@
 
   @foreach($shops as $shop => $data)
   <div class="box" id="box{{ $loop->index }}">
-    <img src="images/store/{{ $data->image }}">
+    <img src="{{ asset('storage/images/' . $data->image) }}">
     <div class="box-card">
       <h4 class="box-card-tle">{{ $data->name }}</h4>
       @csrf

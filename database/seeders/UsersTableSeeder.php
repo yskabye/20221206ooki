@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         /*$param = [
             'name' => '管理者',
-            'email' => 'admin@resa.co.jp',
+            'email' => 'admin@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 9
         ];
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
 
         /*$param = [
             'name' => '青木 道康',
-            'email' => 'store01@resa.co.jp',
+            'email' => 'store01@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 1,
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '長野 裕一',
-            'email' => 'store02@resa.co.jp',
+            'email' => 'store02@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 2,
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '佐藤 純平',
-            'email' => 'store03@resa.co.jp',
+            'email' => 'store03@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 3,
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '七瀬 恭子',
-            'email' => 'store04@resa.co.jp',
+            'email' => 'store04@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 4,
@@ -60,7 +60,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '岡 智子',
-            'email' => 'store05@resa.co.jp',
+            'email' => 'store05@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 5,
@@ -69,7 +69,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '美川 透',
-            'email' => 'store06@resa.co.jp',
+            'email' => 'store06@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 6,
@@ -78,7 +78,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '高尾 洋介',
-            'email' => 'store07@resa.co.jp',
+            'email' => 'store07@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 7,
@@ -87,7 +87,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '高橋 淳平',
-            'email' => 'store08@resa.co.jp',
+            'email' => 'store08@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 8,
@@ -96,7 +96,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '山本 瞬',
-            'email' => 'store09@resa.co.jp',
+            'email' => 'store09@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 9,
@@ -105,7 +105,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '米持 和樹',
-            'email' => 'store10@resa.co.jp',
+            'email' => 'store10@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 10,
@@ -114,7 +114,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '高橋 真純',
-            'email' => 'store11@resa.co.jp',
+            'email' => 'store11@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 11,
@@ -123,7 +123,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '荒川 文子',
-            'email' => 'store12@resa.co.jp',
+            'email' => 'store12@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 12,
@@ -132,7 +132,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '廣瀬 勝',
-            'email' => 'store13@resa.co.jp',
+            'email' => 'store13@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 13,
@@ -141,7 +141,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '塚本 政浩',
-            'email' => 'store14@resa.co.jp',
+            'email' => 'store14@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 14,
@@ -150,7 +150,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '石原 洋',
-            'email' => 'store15@resa.co.jp',
+            'email' => 'store15@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 15,
@@ -159,7 +159,7 @@ class UsersTableSeeder extends Seeder
 
         $param = [
             'name' => '松尾 明',
-            'email' => 'store16@resa.co.jp',
+            'email' => 'store16@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 5,
             'restrant_id' => 16,

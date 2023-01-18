@@ -45,6 +45,7 @@
     <div class="main__input-line">
       <label>担当店舗</label>
       <select name="restrant_id">
+        <option value="0">新規店舗</option> 
         @foreach($restrants as $restrant => $data)
         <option value="{{$data->id}}" {{old('restrant_id')==$data->id || (empty($employee->restrant_id)?0:$employee->restrant_id) == $data->id ? 'selected':'' }}>{{$data->name}}</option>
         @endforeach

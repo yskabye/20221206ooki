@@ -28,7 +28,7 @@
     </div>
 
     <div class="main__left-detail">
-      <img src="../images/store/{{ $shop->image }}" alt="{{ $shop->image }}">
+      <img src="{{ asset('storage/images/' . $shop->image) }}" alt="{{ $shop->image }}">
       <div class="main__left-detail-key">
         <span>#{{ $shop->area->name }}</span>
         <span>#{{ $shop->genre->name }}</span>

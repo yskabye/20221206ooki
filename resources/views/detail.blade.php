@@ -27,7 +27,7 @@
     </div>
 
     <div class="main__left-detail">
-      <img src="../images/store/{{ $shop->image }}" alt="{{ $shop->image }}">
+      <img src="{{asset('storage/images/' . $shop->image)}}" alt="{{ $shop->image }}">
       <div class="main__left-detail-key">
         <span>#{{ $shop->area->name }}</span>
         <span>#{{ $shop->genre->name }}</span>
@@ -36,6 +36,34 @@
         {{ $shop->overview }}
       </p>
     </div>
+
+    @if(count($reviews) > 0)
+    <div class="main__left-review">
+      <h3 class="main__left-review-tle">ご利用者様のクチコミ</h3>
+      <div class="main__left-review-page">
+      {{$reviews->links()}}
+      </div>
+      @foreach($reviews as $review)
+      <div class="main__left-review-card">
+        <div class="main__left-review-card-head">
+          <p>{{$review->name}}<p>
+          <div class="main__left-review-card-head-right">
+            <p>{{str_replace('-','/',$review->reserve_date)}} {{substr($review->reserve_time,0,5)}} ご利用</p>
+            <div class="main__left-review-card-head-right-star">
+              @for($i = 0 ; $i < $review->values ; $i++)
+              <img class="border" src="../images/staron2.svg">
+              @endfor
+              @for($i = $review->values ; $i < 5 ; $i++)
+              <img src="../images/staroff.svg">
+              @endfor
+            </div>
+          </div>
+        </div>
+        <p class="main__left-review-card-comment">{{$review->comment}}</p>
+      </div>
+      @endforeach
+    </div>
+    @endif
   </div>
 
   <form method="post" action="/done" class="main__right">
@@ -61,7 +89,7 @@
       <select name="people_num">
         @for($i = $shop->rsv_min ; $i <= $shop->rsv_max ; $i++)
           <option value={{ $i }} {{ $i==old('people_num') || $i==$shop->rsv_min ? 'selected' : '' }}>{{ $i }}人</option>
-          @endfor
+        @endfor
       </select>
 
       <div class="main__right-form-result">

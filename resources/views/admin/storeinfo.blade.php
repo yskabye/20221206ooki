@@ -20,12 +20,18 @@
   </div>
 </div>
 
+<div class="dialog">
+  <p></p>
+  <div class="dialog_btn2">
+    <button type="button" class="dialog_OK">OK</button>
+  </div>
+</div>  
+
 <h2 class="store">店舗名 ： {{ $restrant->name }}</h2>
 
-<form method="post" action="/admin/store_upd" class="main">
+<form method="post" action="/admin/store_upd" class="main" enctype="multipart/form-data">
   @csrf
   <input type="hidden" name="id" value={{empty($restrant->id)?:$restrant->id}}>
-  <input type="hidden" name="name" value="{{$restrant->name}}">
 
   <div class="main__btn">
     <button type="submit" class="main__btn-savebtn"></button>
@@ -44,7 +50,12 @@
   <div class="main__input1">
     <div class="main__input1-left">
 
-    <div class="main__input1-left-line">
+      <div class="main__input1-left-line">
+        <label>店舗名</label>
+        <input type="text" name="name" value="{{$restrant->name}}">
+      </div>
+
+      <div class="main__input1-left-line">
         <label>出店地域</label>
         <select name="area_id">
           @foreach($areas as $area => $data)
@@ -69,10 +80,16 @@
           <option value="{{$data}}" {{$data == $restrant->image ? "selected" : ''}}>{{$data}}</option>
           @endforeach
         </select>
+        <div class="main__input1-left-upload">
+          <label>
+            <input type="file" id="upload" name="upfile">別画像を指定する
+          </label>
+        </div>
       </div>
     </div>
+
     <div class="main__input1-right">
-      <img src="{{empty($restrant->image) ? '' : '../images/store/' . $restrant->image}}" >
+      <img src="{{empty($restrant->image) ? '' : asset('/storage/images/' . $restrant->image)}}" >
     </div>
   </div>
 
@@ -95,16 +112,16 @@
 
       <div class="main__input3-left-line">
         <label>受付予約時間</label>
-        <input type="time" name="rsv_start" value="{{ empty($restrant->id) ||!empty(old('rsv_start')) ? old('rsv_start') : $restrant->rsv_start->format('H:i')}}" step="{{$restrant->id * 60}}">
+        <input type="time" name="rsv_start" value="{{ empty($restrant->id) ||!empty(old('rsv_start')) ? old('rsv_start') : $restrant->rsv_start->format('H:i')}}" step={{$restrant->timespan * 60}}>
         <p>〜</p>
-        <input type="time" name="rsv_end" value="{{ empty($restrant->id)  ||!empty(old('rsv_end')) ? old('rsv_end') : $restrant->rsv_end->format('H:i')}}" step="{{$restrant->id * 60}}">
+        <input type="time" name="rsv_end" value="{{ empty($restrant->id)  ||!empty(old('rsv_end')) ? old('rsv_end') : $restrant->rsv_end->format('H:i')}}" step={{$restrant->timespan * 60}}>
       </div>
 
       <div class="main__input3-left-line">
         <label>受付時間単位</label>
         <select name="timespan">
           @for($i = 15 ; $i <= 60 ; $i *= 2)
-          <option value={{$i}}>{{$i}}分</option>
+          <option value={{$i}} {{ $i == $restrant->timespan ? 'selected' : ''}}>{{$i}}分</option>
           @endfor
         </select>
       </div>

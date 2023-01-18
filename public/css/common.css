@@ -259,17 +259,28 @@ a {
   border-radius: 10px;
   color: black;
   display: none;
+  z-index: 10;
 }
 
 .dialog p{
-  text-align : center;
-  margin: 50px 0  35px;
+  text-align : left;
+  line-height: 115%;
+  margin: 25px auto 10px;
+  height: 65px;
+  width: 85%;
 }
 
 .dialog_btn{
   display: flex ;
   justify-content: space-between;
   width: 85%;
+  margin: 0 auto;
+}
+
+.dialog_btn2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -286,4 +297,9 @@ a {
 .dialog_Cancel:hover {
   background: #0099FF;
   color: black;
+}
+
+/* Star */
+.border{
+  stroke : #d0d0d0;
 }
