@@ -1,0 +1,122 @@
+body {
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  margin: 0 auto 20px;
+}
+
+.header__corp {
+  margin: 12px 0 0 25px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #305dff;
+}
+
+/* main */
+
+.main{
+  width: 480px;
+  margin:calc(50vh - 150px) auto;
+}
+
+/* main - board */
+
+.main__board{
+  margin-top : 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 30px 30px;
+}
+
+.main__board-word1,
+.main__board-word2{
+  line-height: 115%;
+  color: #3f3f3f;
+}
+
+.main__board-btn{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__board-btn-remain{
+  border:none;
+  background: #305dff;
+  border-radius: 5px;
+  color:white ;
+  padding: 7px 12px;
+}
+
+.main__board-btn-remain:hover {
+  background: #1010ff;
+}
+
+.main__board-btn-logout{
+  border:none;
+  background: #7f7f7f;
+  border-radius: 5px;
+  color:white;
+  padding: 7px 12px;
+}
+
+.main__board-btn-logout:hover {
+  background: #3f3f3f;
+}
+
+@media screen and (max-width:680px) {
+  body {
+    margin: 30px calc(50vw - 240px);
+  }
+
+  .header {
+    margin-left: 0 ;
+  }
+
+}
+
+@media screen and (max-width:520px) {
+  body {
+    margin: 30px 0;
+  }
+
+  .header {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .main {
+    width: 100vw;
+    margin: 120px 0;
+  }
+}
+
+@media screen and (max-width:310px) {
+  .main__board {
+    padding: 10px 10px;
+  }
+
+  .main__board-word1,
+  .main__board-word2 {
+    padding: 20px 20px 0px;
+  }
+
+  .main__board-btn{
+    padding: 0 0 20px;
+  }
+}
+
+@media screen and (max-height:320px) {
+  .main {
+      margin-top: 25px;
+      overflow-y: auto;
+    }
+}

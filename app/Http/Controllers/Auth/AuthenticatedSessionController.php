@@ -32,14 +32,18 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        //return redirect()->intended(RouteServiceProvider::HOME);
         $user = Auth::user();
         if($user->type_id == 5)
             return redirect('/admin/rsv_list');
         else if($user->type_id == 9)
             return redirect('/admin/user_list');
-        else
-            return back();
+        else{
+            if(empty($user->email_verified_at))
+                return view('auth.verify-email');
+            else
+                return redirect()->intended(RouteServiceProvider::HOME);
+        }
+            //return back();
     }
 
     /**

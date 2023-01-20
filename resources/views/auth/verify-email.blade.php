@@ -1,39 +1,58 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.default')
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/reset.css')}}">
+<link rel="stylesheet" href="{{ asset('css/verify.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css')}}">
+@endsection
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('ご登録ありがとうございます。メールで送りましたリンクをクリックして、メールアドレスを確認しください。メールが届かない場合は、別のメールアドレスでご確認下さい。') }}
+@section('content')
+<div class="header">
+    <nav class="nav" id="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/register">Registration</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="symbol" id="symbol">
+        <span class="symbol__line--top"></span>
+        <span class="symbol__line--middle"></span>
+        <span class="symbol__line--bottom"></span>
+    </div>
+    <h1 class="header__corp">Rese</h1>
+</div>
+
+<main class="main">
+    <div class="main__board">
+        <div class="main__board-word1">
+            ご登録ありがとうございます。メールで送りましたリンクをクリックして、メールアドレスを確認しください。メールが届かない場合は、別のメールアドレスでご確認下さい。
         </div>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('登録時に指定したメールアドレスに、確認リンクを送信しました。') }}
+            <div class="main__board-word2">
+                登録時に指定したメールアドレスに、確認リンクを送信しました。
             </div>
         @endif
 
-        <div class="mt-4 flex items-center justify-between">
+        <div class="main__board-btn">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
 
                 <div>
-                    <x-button>
-                        {{ __('確認メールを再送') }}
-                    </x-button>
+                    <button class="main__board-btn-remain">確認メールを再送</button>
                 </div>
             </form>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
+                <button type="submit" class="main__board-btn-logout">ログアウト</button>
             </form>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+</main>
+@endsection
+@section('js2')
+<script src="js/navi.js"></script>
+@endsection

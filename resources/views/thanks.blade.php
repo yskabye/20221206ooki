@@ -22,7 +22,7 @@
     <p class="main__box-msg">会員登録ありがとうございます</p>
     <div class="main__box-btn">
       @csrf
-      <a href="/login">ログインする</a>
+      <a href="/login">利用開始する</a>
     </div>
   </div>
 
