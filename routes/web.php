@@ -7,6 +7,7 @@ use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\MailingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,10 +44,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get ('/admin/user_edit', [UserController::class, 'edit']);
     Route::post('/admin/user_upd',  [UserController::class, 'update']);
     // 管理画面 2022/12/27 End
-});
-
-Route::get('/mail', function () {
-    return view('auth.verify-email');
+    // Mailingl機能  2023/01/21 start
+    Route::get ('/admin/mailing',  [MailingController::class, 'index']);
+    Route::post('/admin/mailsave', [MailingController::class, 'update']);
+    Route::post('/admin/mailsend', [MailingController::class, 'sendmail']);
+    // Mailingl機能  2023/01/21 end
 });
 
 require __DIR__ . '/auth.php';

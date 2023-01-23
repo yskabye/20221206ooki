@@ -17,7 +17,7 @@ define("IMAGEDIR", "../public/storage/images");
 
 class RestrantController extends Controller
 {
-     public function index(Request $request)
+    public function index(Request $request)
     {
         $user = Auth::user();
         $areas = Area::all();

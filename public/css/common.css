@@ -256,6 +256,8 @@ a {
   top: calc(50vh - 75px);
   left: calc(50vw - 150px);
   background: white;
+  border:1px #7f7f7f solid;
+  box-shadow: 1px 2px 3px rgba(123,123,123, 0.4);
   border-radius: 10px;
   color: black;
   display: none;
