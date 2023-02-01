@@ -11,7 +11,6 @@ $(function () {
 $('input[name="reserve_date"]').change(function () {
   $('#inp_date').text($('input[name="reserve_date"]').val());
 
-  // Check
   if ($('input[name="holiday"]').val() > 0){
     $('#err_holiday').hide();
     var inpdate = new Date($('input[name="reserve_date"]').val());
@@ -32,7 +31,6 @@ $('select[name="people_num"]').change(function() {
   $('#inp_num').text($('select[name="people_num"]').val() + "人");
 });
 
-// Submit可能であるかをチェックする
 $('form').submit(function (e) {
   if ($('#err_holiday').is(":visible")) {
     return e.preventDefault();

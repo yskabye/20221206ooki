@@ -35,7 +35,7 @@
                 <input name="email" type="email" placeholder="Email" :value="old('email')">
             </div>
             <div class="main__box-inp-pwd">
-                <img src="images/password.png">
+                <img src="images/password.jpg">
                 <input name="password" type="password" placeholder="Password" autocomplete="current-password">
             </div>
 

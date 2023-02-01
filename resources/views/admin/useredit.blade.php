@@ -62,8 +62,6 @@
     </div>
   </form>
 
-
-
 </main>
 @endsection
 @section('js2')

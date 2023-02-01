@@ -12,22 +12,32 @@ $('select[name="timespan"]').change(function () {
 $('#upload').change(function (e) {
   var file = e.target.files[0];
   if(file.type.indexOf('jpg') < 0 && file.type.indexOf('jpeg') < 0){
-    alert("JPEG画像ファイルを指定してください。");
+    $('.dialog p').text("JPEG画像ファイルを指定してください。");
+    $('#upload').val('');
+    $('.dialog').css('display','block');
     return false;
   }
 
-  // すでにサーバーにあるファイルかどうか？
   var path = $('#upload').val();
   var fname = path.split(/[\\\/]/).pop();
 
   $('select[name="image"] option').each(function () {
     if (fname == $(this).text()) {
-      $('.dialog p').text("すでに同一名がアップロード済みです。");
+      $('.dialog p').text("すでに同一ファイル名がアップロード済みです。");
       $('#upload').val('');
       $('.dialog').css('display','block');
       return;
     }
   });
+
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    $('img').attr('src', e.target.result);
+  }
+  reader.readAsDataURL(e.target.files[0]);
+
+  $('select[name="image"]').append('<option value="' + fname +'">' + fname + '</option>');
+  $('select[name="image"]').val(fname);
 });
 
 $('.dialog_OK').click(function () {

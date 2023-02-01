@@ -27,6 +27,7 @@
       <li><a href="/admin/store_edit">Edit Store</a></li>
       <li><a href="/admin/rsv_list">Reserve List</a></li>
       <li><a href="/admin/mailing">Promotional eMail</a></li>
+      <li><a href="/admin/qrreader">Check in</a></li>
       @endif
       @endif
     </ul>

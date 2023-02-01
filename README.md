@@ -1,6 +1,8 @@
 # Rese（リーズ）
 
-ある企業のグループ会社の飲食店予約サービス
+Rese社のグループ会社の飲食店予約サービス
+![picture 1](images/7b80fd5b00e84b573b808ed22d86e22eda41de407cdb78282c2ccc2ad32e99b7.png)  
+
 
 ## 作成した目的
 
@@ -8,11 +10,7 @@
 
 ## URL
 
-http://xxxxxxx
-
-## 他のリポトロジー
-
-http://
+https://github.com/yskabye/20221206ooki
 
 ## 機能一覧
 
@@ -28,29 +26,53 @@ http://
 -   飲食店お気に入り削除
 -   飲食店予約情報追加
 -   飲食店予約情報削除
+-   飲食店予約情報変更
 -   エリアで検索する
 -   ジャンルで検索する
 -   店名で検索する
+-   利用後評価
+-   予約に対するQRコードを表示する
+    (以下は管理者向け)
+-   店舗管理者追加
+-   店舗管理者編集
+-   店舗管理者削除
+-   新規店舗追加
+    (以下は店舗管理者向け)
+-   店舗情報を編集する
+-   店舗画像を変更する
+-   予約一覧を表示する
+-   予約を日付、または時刻で限定表示する
+-   メールマガジン入力・送信
+-   予約者チェックインを確認する
 
 ## 使用技術
 
 -   Laravel 8.83.26(Framework, PHP 7.4)
 -   jQuery(3.5.1)
+-   jsQR
+-   Simple QrCode(v4)
 
 ## テーブル設計
 
-- **[参照ページ](https://docs.google.com/spreadsheets/d/1PPSwFs4CRRKUTM0Z75WfnCJP4IAOYAt7k38oznpVvbc/edit#gid=1635115377)**
+![-   **[参照ページ](https://docs.google.com/spreadsheets/d/1PPSwFs4CRRKUTM0Z75WfnCJP4IAOYAt7k38oznpVvbc/edit#gid=1635115377)** 1](images/fa70a6413294c677d9fa10f6ddfda4bf8803e4f24a00ec7fe8c7515bcf4d87bd.png)  
+![picture 3](images/240e8dd2093a7a9e401fc0a0d8efe8e0b766789235e5b3ce43431400f838df0f.png)  
 
-##　ER図
 
-- **[参照ページ](https://docs.google.com/spreadsheets/d/1PPSwFs4CRRKUTM0Z75WfnCJP4IAOYAt7k38oznpVvbc/edit#gid=320603785)**
+##　 ER 図
+
+![picture 4](images/cdf99eefa37d47da1facd8ff5f97cae649a1fbe359b8ddf763380e3b7c12ba52.png)  
+
 
 ## 環境構築
 
--   ”git push xxxxx”でダウンロードした後、"php artisan serve"を実行。
+-   ”git push https://github.com/yskabye/20221206ooki”でダウンロードする。
+-   ".env"ファイルを用意されたDBサーバーとSMTPサーバーに合わせて変更する。
 
 ## 特記事項
 
 -   アカウントは利用者とサイト管理者、店舗管理者の３種類
 -   利用者は登録画面から利用者自身が利用できるが、その他は管理画面でのみ登録できる
--   店舗管理者は管理している店舗の運用日時の設定ができる
+-   利用者は確認メールによる認証が必要だが、店舗管理者は不要。
+-   店舗管理者は管理している店舗の概要、店舗イメージ画像、運用日時等の設定ができる。
+-   新規店舗が発生した場合は、サイト管理者にて追加し、担当となった店舗管理者が具体的な情報を設定する。
+

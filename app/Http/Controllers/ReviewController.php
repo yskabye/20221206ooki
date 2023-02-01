@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Reserve;
 use App\Models\Review;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -18,7 +18,8 @@ class ReviewController extends Controller
                             ->with('review')
                             ->where('user_id', $user->id)
                             ->where('reserve_date', '<', Carbon::now())
-                            ->orderBy('reserves.id')
+                            ->orderBy('reserves.reserve_date')
+                            ->orderBy('reserves.reserve_time')
                             ->get();
 
         foreach ($reserves as $reserve) {

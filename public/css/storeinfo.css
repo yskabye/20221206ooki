@@ -1,4 +1,4 @@
-/* index */
+/* 全体 */
 
 body{
   background: #eeeeee;
@@ -9,7 +9,7 @@ body{
 /* header */
 
 .header{
-  margin: 0 auto 30px;
+  margin: 0 0 30px;
 }
 
 .header__mark-corp{
@@ -50,23 +50,12 @@ body{
 
 .main__btn-savebtn{
   background: white;
-  background-image: url(../images/save.png);
+  background-image: url(../images/save.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 35px;
   height: 35px;
   border: none;
-  border-radius: 3px;
-}
-
-.main__btn-backbtn {
-  background: #fcfcfc;
-  background-image: url(../images/back.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 34px;
-  height: 34px;
-  border: 1px #cfcfcf solid;
   border-radius: 3px;
 }
 
@@ -100,6 +89,7 @@ body{
 .main__input1-left-line {
   height: 65px;
   vertical-align: middle ;
+  display: flex;
 }
 
 .main__input3-left-line,
@@ -119,7 +109,7 @@ body{
   width: 190px;
   height: 22px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 5px;
   font-size: 13px;
 }
@@ -128,18 +118,28 @@ body{
   width: 200px;
   height: 25px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 5px;
   font-size: 13px;
 }
 
-.main__input1-left-upload {
+.main__input1-left-line-left {
   display: flex;
-  justify-content: center;
-  margin: 5px 0 10px 40px;
+  flex-direction: column;
+  width: 110px;
 }
 
-.main__input1-left-upload label {
+.main__input1-left-line-right{
+  width: 200px;
+  display:flex;
+  flex-direction: column;
+}
+
+.main__input1-left-line-right-upload {
+  margin: 5px 0 10px -65px;
+}
+
+.main__input1-left-line-right-upload label {
   font-weight: 500;
   font-size: 13px;
   padding: 5px 10px;
@@ -152,12 +152,12 @@ body{
   text-align: center;
 }
 
-.main__input1-left-upload label:hover {
+.main__input1-left-line-right-upload label:hover {
   background: #3f3fc8;
   box-shadow: 1px 1px 1px 1px #7f7fff;
 }
 
-.main__input1-left-upload input[type="flle"] {
+.main__input1-left-line-right-upload input[type="flle"] {
   display: none;
 }
 
@@ -187,16 +187,21 @@ body{
   width: calc(100% - 120px);
   height: 75px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 5px 5px;
   font-size: 13px;
+}
+
+.main__input3-left-line:nth-of-type(2),
+.main__input3-right-line:nth-of-type(3) {
+  display: flex;
 }
 
 .main__input3-left-line select {
   width: 85px;
   height: 25px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 5px;
   font-size: 13px;
 }
@@ -216,7 +221,7 @@ body{
   width: 75px;
   height: 23px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 10px;
   font-size: 13px;
 }
@@ -225,47 +230,39 @@ body{
   width: 70px;
   height: 23px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   padding-left: 10px;
   font-size: 13px;
 }
 
-@media screen and (max-width:940px) {
+@media screen and (max-width:1000px) {
   body {
-    margin: 30px 30px;
+    margin: 30px 0;
   }
 
-  .main {
-    padding: 40px;
+  .header {
+    margin: 0 0 30px 30px;
   }
 }
 
-@media screen and (max-width:900px) {
-  body {
-    margin: 30px 10px;
-  }
-
+@media screen and (max-width:839px) {
   .main {
     padding: 30px;
   }
 }
 
-@media screen and (max-width:780px) {
-  body {
-    margin: 30px 5px;
+@media screen and (max-width:800px) {
+  .main {
+    padding: 25px;
   }
+}
 
+@media screen and (max-width:789px) {
   .main {
     width: 370px;
-    padding: 25px;
   }
 
   .main__input1 {
-    flex-flow: column;
-  }
-
-  .main__input3 {
-    margin-top: 30px;
     flex-flow: column;
   }
 
@@ -281,20 +278,17 @@ body{
     height: 125px;
   }
 
+  .main__input3 {
+    margin-top: 30px;
+    flex-flow: column;
+  }
+
   .main__input3-right {
     margin-left: 0px;
   }
 }
 
-@media screen and (max-width:420px) {
-  body {
-    margin: 30px 0px;
-  }
-
-  .header {
-    margin: 0 20px 30px;
-  }
-
+@media screen and (max-width:419px) {
   .main {
     width: calc(100vw - 30px);
     padding: 15px;
@@ -319,11 +313,11 @@ body{
   }
 
   .main__input2 {
-    height: 125px;
+    height: 175px;
   }
 
   .main__input2 textarea {
-    height: 125px;
+    height: 175px;
   }
 
   .main__input3-right {
@@ -331,19 +325,47 @@ body{
   }
 }
 
-@media screen and (max-width:300px) {
+@media screen and (max-width:373px) {
   .main {
     width: calc(100vw - 20px);
     padding: 10px;
   }
 
+  .main__input1-left-line label,
+  .main__input2 label,
+  .main__input3-left-line label,
+  .main__input3-right-line label
+  {
+    width: 105px;
+  }
+
+  .main__input1-left-line input {
+    width: calc(100% - 130px);
+  }
+
   .main__input1-left-line select {
-    width: 145px;
+    width: calc(100% - 120px);
   }
 
   .main__input1-right img {
-    margin: -10px;
+    margin-left: 5px;
+  }
+
+  .main__input1-left-line-right{
+    margin-left: -5px;
+    width: calc(100% - 120px);
+  }
+
+  .main__input1-left-line-right select{
     width: 100%;
+  }
+
+  .main__input1-left-line-right-upload{
+    width: 100%;
+  }
+
+  .main__input1-left-line-right-upload label {
+    width: 90%;
   }
 
   .main__input3-left-line,
@@ -354,10 +376,14 @@ body{
 
   .main__input3-left-line:nth-of-type(2) {
     height: 80px;
+    display: flex;
+    flex-direction: column;
   }
 
   .main__input3-right-line:nth-of-type(3){
     height: 80px;
+    display: flex;
+    flex-direction: column;
   }
 
   .main__input3-left-line p,
@@ -366,4 +392,52 @@ body{
     padding: 10px 5px 0 120px;
   }
 
+  .main__input3-left-line-end,
+  .main__input3-right-line-end{
+    margin-left: -35px;
+  }
+}
+
+@media screen and (max-width:335px) {
+  .main__input1-left-line label
+  {
+    width: 85px;
+  }
+
+  .main__input1-left-line input {
+    width: 160px;
+  }
+
+  .main__input1-left-line select {
+    width: 170px;
+  }
+
+  .main__input1-left-line-left {
+    width: 85px;
+  }
+
+  .main__input1-left-line-right {
+    width: 180px ;
+  }
+
+  .main__input1-left-line-right select{
+    width: 175px;
+  }
+
+  .main__input1-left-line-right-upload label {
+    width: 155px;
+  }
+
+  .main__input2 {
+    height: 200px;
+  }
+
+  .main__input2 textarea {
+    height: 200px;
+  }
+
+  .main__input3-left-line-end,
+  .main__input3-right-line-end {
+    margin-left: -35px;
+  }
 }

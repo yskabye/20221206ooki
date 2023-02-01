@@ -20,6 +20,7 @@ class CreateReservesTable extends Migration
             $table->date('reserve_date')->nullable(false);
             $table->time('reserve_time')->nullable(false);
             $table->unsignedInteger('people_num')->nullable(false);
+            $table->timestamp('visit_at')->nullable();
             $table->unsignedBigInteger('liquid_id')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

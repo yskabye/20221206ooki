@@ -1,0 +1,99 @@
+/* 全体 */
+
+body {
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* header */
+
+.header {
+  margin: 0 0 30px;
+}
+
+.header__mark-corp {
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #305dff;
+}
+
+/* store */
+
+.store {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 0 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* Camera */
+
+.camera{
+  width: 640px;
+  margin: 0 auto;
+  background: #305dff;
+  border-radius: 10px;
+  padding: 30px 30px;
+}
+
+#loadingMessage {
+  text-align: center;
+  padding: 40px;
+  color: #eee;
+}
+
+#canvas {
+  width:100%;
+}
+
+#outputMessage{
+  color: white;
+}
+
+.camera__data{
+  color:white;
+}
+
+#outputData{
+  color: yellow;
+}
+
+#outputErro{
+  color: red;
+  font-size: inherit;
+}
+
+@media screen and (max-width:900px) {
+  body {
+    margin: 30px calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width:760px) {
+  body {
+    margin: 30px 0;
+  }
+
+  .header {
+    margin: 0 0 30px 30px;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .store {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .camera {
+    width: calc(50vw-20px);
+    padding: 20px 20px;
+  }
+}

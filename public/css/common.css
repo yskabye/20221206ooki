@@ -142,42 +142,42 @@ a {
   width: 100%;
 }
 
-.box-card {
+.box__card {
   padding: 20px 20px;
 }
 
-.box-card-tle {
+.box__card-tle {
   font-size: 20px;
   font-weight: bold;
 }
 
-.box-card-key {
+.box__card-key {
   padding: 10px 0 15px;
 }
 
-.box-card-key span {
+.box__card-key span {
   font-size: 12px;
 }
 
-.box-btn {
+.box__card-btn {
   display: flex;
   justify-content: space-between;
 }
 
-.box-btn-lnk {
+.box__card-btn-lnk {
   background: #305dff;
   border-radius: 5px;
   text-align: center;
   padding: 8px 15px 10px;
 }
 
-.box-btn-lnk a {
+.box__card-btn-lnk a {
   font-size: 14px;
   text-decoration: none;
   color: white;
 }
 
-.box-btn button{
+.box__btn button{
   border:none ;
   background: transparent;
 }
@@ -206,34 +206,6 @@ a {
   background: red;
 }
 
-/* Tooltip (保留)*/
-
-/*.tooltip {
-  width: 100px;
-  padding: 10px;
-  font-size: 12px;
-  margin: -30px 0 0;
-  background-color: #666;
-  color: #fff;
-  position: absolute;
-  left: 30px;
-  top: 50%;
-}
-
-.tooltip:before {
-  right: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-color: rgba(102, 102, 102, 0);
-  border-right-color: #5e5e5e;
-  border-width: 8px;
-  margin-top: -8px;
-}*/
-
 /* エラーメッセージ */
 
 .errmsg{
@@ -256,7 +228,7 @@ a {
   top: calc(50vh - 75px);
   left: calc(50vw - 150px);
   background: white;
-  border:1px #7f7f7f solid;
+  border:1px solid #7f7f7f;
   box-shadow: 1px 2px 3px rgba(123,123,123, 0.4);
   border-radius: 10px;
   color: black;
@@ -292,7 +264,7 @@ a {
   background: #6699CC ;
   color: white;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
 }
 
 .dialog_OK:hover,

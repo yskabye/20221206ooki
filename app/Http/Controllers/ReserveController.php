@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\ReserveRequest;
 use App\Models\Reserve;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Restrant;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class ReserveController extends Controller
@@ -118,6 +118,67 @@ class ReserveController extends Controller
     if(!empty($request->end_time)) $key += array('end_time' => $request->end_time);
 
     return view('admin.rsvlist',['user' => $user, 'key' => $key, 'restrant' => $restrant, 'reserves' => $reserves, 'timespan' => $timespan]);
+  }
+
+  public function qrcode($id)
+  {
+    $user = Auth::user() ;
+
+    $reserve = Reserve::with('restrant')->find($id);
+    $reserve->reserve_date = new Carbon($reserve->reserve_date);
+    $reserve->reserve_time = new Carbon($reserve->reserve_time);
+
+    $code = "https://wwww.rese.co.jp/reserve/" . $id ;
+
+    return view('qrcode',['user' => $user, 'code' => $code, 'reserve' => $reserve]);
+  }
+
+  public function zoomin()
+  {
+    $user = Auth::user() ;
+    $restrant = Restrant::find($user->restrant_id);
+
+    return view('admin.qrreader',['user' => $user, 'restrant' => $restrant]);
+  }
+
+  public function checkin(Request $request)
+  {
+    $user = Auth::user() ;
+    $restrant = Restrant::find($user->restrant_id);
+
+    $today = new Carbon();
+
+    $reserve = Reserve::with('restrant')
+              ->find($request->id);
+
+    $message = "来店確認できました。";
+    $error = false;
+
+    if(!empty($reserve) > 0){
+      $reserve->reserve_date = new Carbon($reserve->reserve_date);
+      $reserve->reserve_time = new Carbon($reserve->reserve_time);
+
+      if($reserve->restrant_id != $user->restrant_id){
+        $error = true;
+        $message = "予約は対象外です。";
+      }else if ($reserve['reserve_date'] != Carbon::today()){
+        $error = true;
+        $message = "予約は別の日のものです。";
+      }else if (!empty($reserve->visit_at)){
+        $error = true;
+        $message = "すでにチェックイン済みです。";
+      }else{
+        $update = [];
+        $update['visit_at'] = new Carbon();
+
+        Reserve::find($request->id)->update($update);
+      }
+    }else{
+      $error = true;
+      $message = "予約が確認できません。";
+    }
+
+    return view('admin.checkin',['user' =>$user, 'error' => $error, 'message' => $message, 'reserve' => $reserve]);
   }
 
 }

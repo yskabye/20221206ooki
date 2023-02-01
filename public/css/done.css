@@ -1,4 +1,4 @@
-/* index */
+/* 全体 */
 
 body {
   background: #eeeeee;
@@ -10,7 +10,7 @@ body {
 /* header */
 
 .header {
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
 }
 
 .header__corp {
@@ -24,12 +24,12 @@ body {
 /* main */
 
 .main {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .main__box {
   background: white;
-  border: 1px #efefef solid;
+  border: 1px solid #efefef;
   border-radius: 5px;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.45);
   width: 400px;
@@ -51,7 +51,7 @@ body {
 
 .main__box-btn a {
   text-decoration: none;
-  border: 1px #305dff solid;
+  border: 1px solid #305dff;
   color: white;
   background: #305dff;
   padding: 5px 15px;
@@ -59,7 +59,42 @@ body {
 }
 
 .main__box-btn a:hover {
-  border: 1px blue solid;
+  border: 1px solid blue;
   background: blue;
   color: yellow;
+}
+
+@media screen and (max-width:800px) {
+  body {
+    margin: 30px calc(50vw - 300px);
+  }
+
+  .header {
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (max-width:660px) {
+  body {
+    margin: 30px 0;
+  }
+
+  .header {
+    margin: 0 30px 20px;
+  }
+}
+
+@media screen and (max-width:507px) {
+  .main__box {
+    width: 79%;
+    margin: 100px 0 0 0;
+  }
+}
+
+@media screen and (max-width:364px) {
+  .main__box-msg {
+    width: 190px;
+    margin: 0 auto;
+    line-height: 125%;
+  }
 }

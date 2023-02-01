@@ -1,4 +1,4 @@
-/* index */
+/* 全体 */
 
 body{
   background: #eeeeee;
@@ -45,7 +45,7 @@ body{
 
 .main__input-btn-savebtn{
   background: white;
-  background-image: url(../images/save.png);
+  background-image: url(../images/save.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 35px;
@@ -56,12 +56,12 @@ body{
 
 .main__lists-btn-backbtn {
   background: #fcfcfc;
-  background-image: url(../images/back.png);
+  background-image: url(../images/back.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 33px;
   height: 33px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
 }
 
@@ -81,7 +81,7 @@ body{
   width: 200px;
   height: 23px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   font-size:14px;
 }
 
@@ -89,7 +89,7 @@ body{
   width: 205px;
   height: 25px;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   font-size: 14px;
 }
 

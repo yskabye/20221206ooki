@@ -2,7 +2,6 @@ var id;
 var upitem;
 
 $('.main__table-lists-line-delbtn').click(function () {
-  // 削除IDの取得1
   upitem = $(this).parent();
   id = upitem.find('input[name="id"]').val();
 
@@ -11,7 +10,7 @@ $('.main__table-lists-line-delbtn').click(function () {
 
 
 $('.dialog_OK').click(function () {
-  // 削除処理
+
  $.ajax({
     type: "DELETE",
     url: "../api/v1/user/" + id,

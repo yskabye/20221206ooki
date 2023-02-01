@@ -1,0 +1,136 @@
+/* 全体 */
+
+body {
+  background: #eeeeee;
+  margin: 30px 100px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* header */
+
+.header {
+  margin: 0 0 30px;
+}
+
+.header__mark-corp {
+  margin: -25px 0 0 65px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #305dff;
+}
+
+/* store */
+
+.store {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 25px 0;
+}
+
+.store p:last-child{
+  margin-top :10px;
+}
+
+/* detail */
+
+.detail {
+  width: 400px;
+  margin: 0 auto;
+  overflow-y: auto;
+  background: #305dff;
+  border-radius: 10px;
+  color: white;
+  padding: 30px;
+}
+
+.detail__msg {
+  padding: 0 0 10px;
+  color: yellow;
+  font-size: 20px;
+  text-align: center;
+}
+
+.detail__err {
+  padding: 0 0 10px;
+  color: pink;
+  font-size: 20px;
+  text-align: center;
+}
+
+.detail__line {
+  display: flex;
+  padding: 10px 0;
+}
+
+.detail__line-flex{
+  display: flex;
+}
+
+.detail__line-flex label{
+  width: 80px;
+}
+
+.detail__line_error{
+  margin-left : 15px;
+  color: violet;
+}
+
+.detail__btn{
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.detail__btn a{
+  color: #1f1f1f;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background: #dfdfdf;
+}
+
+.detail__btn a:hover {
+  color: #00f;
+  background: #ffffff;
+}
+
+@media screen and (max-width:660px) {
+  body {
+    margin: 30px calc(50vw - 230px);
+  }
+}
+
+@media screen and (max-width:520px) {
+  body {
+    margin: 30px 0px;
+  }
+
+  .header {
+    margin: 0 0 30px 30px;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .detail {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width:390px) {
+  .store {
+    font-size: 25px;
+  }
+
+  .detail__line {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+  }
+
+  .detail__line_error {
+    padding-top: 5px;
+    text-align:right;
+  }
+}

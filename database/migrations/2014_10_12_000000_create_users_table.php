@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 191);
             $table->rememberToken();
             $table->tinyInteger('type_id')->default(0)->nullable(false);
-            $table->unsignedBigInteger('restrant_id')->nullable(); // 2022.12.27 追加
+            $table->unsignedBigInteger('restrant_id')->nullable();
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('types');
         });

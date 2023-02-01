@@ -74,16 +74,21 @@
       </div>
 
       <div class="main__input1-left-line">
-        <label>店舗写真</label>
-        <select name="image">
-          @foreach($images as $image => $data)
-          <option value="{{$data}}" {{$data == $restrant->image ? "selected" : ''}}>{{$data}}</option>
-          @endforeach
-        </select>
-        <div class="main__input1-left-upload">
-          <label>
-            <input type="file" id="upload" name="upfile">別画像を指定する
-          </label>
+        <div class="main__input1-left-line-left">
+          <label>店舗写真</label>
+          <label>&nbsp;</label>
+        </div>
+        <div class="main__input1-left-line-right">
+          <select name="image">
+            @foreach($images as $image => $data)
+            <option value="{{$data}}" {{$data == $restrant->image ? "selected" : ''}}>{{$data}}</option>
+            @endforeach
+          </select>
+          <div class="main__input1-left-line-right-upload">
+            <label>
+              <input type="file" id="upload" name="upfile">別画像を指定する
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -111,10 +116,14 @@
       </div>
 
       <div class="main__input3-left-line">
-        <label>受付予約時間</label>
-        <input type="time" name="rsv_start" value="{{ empty($restrant->id) ||!empty(old('rsv_start')) ? old('rsv_start') : $restrant->rsv_start->format('H:i')}}" step={{$restrant->timespan * 60}}>
-        <p>〜</p>
-        <input type="time" name="rsv_end" value="{{ empty($restrant->id)  ||!empty(old('rsv_end')) ? old('rsv_end') : $restrant->rsv_end->format('H:i')}}" step={{$restrant->timespan * 60}}>
+        <div class="main__input3-left-line-str">
+          <label>受付予約時間</label>
+          <input type="time" name="rsv_start" value="{{ empty($restrant->id) ||!empty(old('rsv_start')) ? old('rsv_start') : $restrant->rsv_start->format('H:i')}}" step={{$restrant->timespan * 60}}>
+        </div>
+        <div class="main__input3-left-line-end">
+          <p>〜</p>
+          <input type="time" name="rsv_end" value="{{ empty($restrant->id)  ||!empty(old('rsv_end')) ? old('rsv_end') : $restrant->rsv_end->format('H:i')}}" step={{$restrant->timespan * 60}}>
+        </div>
       </div>
 
       <div class="main__input3-left-line">
@@ -131,20 +140,24 @@
 
       <div class="main__input3-right-line">
         <label>予約可能日</label>
-        <input type="number" name="period" min=0 max=90 value={{ empty($restrant->id) ||!empty(old('period')) ? old('period') : $restrant->period}}><span>日</span>
+        <input type="number" name="period" value={{ empty($restrant->id) ||!empty(old('period')) ? old('period') : $restrant->period}}><span>日</span>
       </div>
 
       <div class="main__input3-right-line">
         <label>予約対応期間</label>
-        <input type="number" name="limit" min=1 max=60 value={{ empty($restrant->id) ||!empty(old('limit')) ? old('limit') : $restrant->limit}}><span>ヵ月迄</span>
+        <input type="number" name="limit" value={{ empty($restrant->id) ||!empty(old('limit')) ? old('limit') : $restrant->limit}}><span>ヵ月迄</span>
       </div>
 
       <div class="main__input3-right-line">
-        <label>受付可能人数</label>
-        <input type="number" name="rsv_min" min=1 max=30 value={{empty($restrant->id) ||!empty(old('rsv_min')) ? old('rsv_min') : $restrant->rsv_min}}>
-        <p>〜</p>
-        <input type="number" name="rsv_max" min=1 max=30 value={{empty($restrant->id) || !empty(old('rsv_max')) ? old('rsv_max') : $restrant->rsv_max}}>
-        <span>人</span>
+        <div class="main__input3-right-line-str">
+          <label>受付可能人数</label>
+          <input type="number" name="rsv_min" value={{empty($restrant->id) ||!empty(old('rsv_min')) ? old('rsv_min') : $restrant->rsv_min}}>
+        </div>
+        <div class="main__input3-right-line-end">
+          <p>〜</p>
+          <input type="number" name="rsv_max" value={{empty($restrant->id) || !empty(old('rsv_max')) ? old('rsv_max') : $restrant->rsv_max}}>
+          <span>人</span>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-/* index */
+/* 全体 */
 
 body{
   background: #eeeeee;
@@ -36,7 +36,7 @@ body{
 
 .main__newbtn button{
   background: transparent;
-  background-image: url(../images/add.png);
+  background-image: url(../images/add.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 35px;
@@ -94,12 +94,12 @@ body{
 
 .main__table-lists-area-line-editbtn {
   background: #fcfcfc;
-  background-image:url(../images/edit.png);
+  background-image:url(../images/edit.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 32px;
   height: 32px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
 }
 
@@ -118,12 +118,12 @@ body{
 
 .main__table-lists-area-line-delbtn {
   background: #fcfcfc;
-  background-image: url(../images/remove.png);
+  background-image: url(../images/remove.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 32px;
   height: 32px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
 }
 

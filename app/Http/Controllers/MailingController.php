@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\MailRequest;
 use App\Models\Restrant;
 use App\Models\User;
 use App\Models\Promote;
+use App\Jobs\SendMailJob;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail; 
-use App\Mail\PromoteMail; 
-use App\Jobs\SendMailJob;
 use Carbon\Carbon;
 
 class MailingController extends Controller
@@ -21,8 +20,9 @@ class MailingController extends Controller
         $user = Auth::user() ;
         $restrant = Restrant::find($user->restrant_id);
 
-        $ebody = Promote::find($user->restrant_id);
-        if(!empty($ebody->send_at)) $ebody->send_at = new Carbon($ebody->send_at);
+        $ebody = Promote::where('restrant_id', $restrant->id)->get();
+
+        if(!empty($ebody[0]->send_at)) $ebody[0]->send_at = new Carbon($ebody[0]->send_at);
         if(empty($request->session()->get('report'))){
             $report = '';
         }else{
@@ -30,7 +30,7 @@ class MailingController extends Controller
             $request->session()->put('report','');
         }
 
-        return view('admin.mailing',['user' => $user, 'restrant' => $restrant, 'ebody' => $ebody, 'report' => $report]);
+        return view('admin.mailing',['user' => $user, 'restrant' => $restrant, 'ebody' => (count($ebody) == 0 ? null : $ebody[0]), 'report' => $report]);
     }
 
     public function update(MailRequest $request)
@@ -59,7 +59,6 @@ class MailingController extends Controller
 
         $form = $request->all();
 
-        $tos = ['kanbye@gmail.com', 'yassyok@ymail.ne.jp', 'yskanbye@rakuten.jp'];
         $subject = $form['subject'] ;
         $from = $user->email;
         $name = $restrant->name . '店長 : ' . $user->name ;
@@ -70,7 +69,7 @@ class MailingController extends Controller
         $report= '' ;
 
         foreach($customers as $customer){
-            SendMailJob::dispatch($customer->email,$from, $name, $subject, $message)->delay(now()->addSecond(4));;
+            SendMailJob::Dispatch($customer->email, $customer->name, $from, $name, $subject, $message);
         }
 
         $report = 'メール送信は完了しました。';

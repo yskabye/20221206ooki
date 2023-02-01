@@ -31,7 +31,7 @@
             @csrf
 
             <div class="main__box-inp-name">
-                <img src="images/man.png">
+                <img src="images/man.jpg">
                 <input name="name" type="text" placeholder="Username" value="{{ old('name') }}">
             </div>
             <div class="main__box-inp-email">
@@ -39,7 +39,7 @@
                 <input name="email" type="email" placeholder="Email" value="{{ old('email') }}">
             </div>
             <div class="main__box-inp-pwd">
-                <img src="images/password.png">
+                <img src="images/password.jpg">
                 <input name="password" type="password" placeholder="Password">
             </div>
 

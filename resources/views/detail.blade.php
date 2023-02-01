@@ -33,7 +33,7 @@
         <span>#{{ $shop->genre->name }}</span>
       </div>
       <p class="main__left-detail-content">
-        {{ $shop->overview }}
+        {!! nl2br(e($shop->overview)) !!}
       </p>
     </div>
 
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-        <p class="main__left-review-card-comment">{{$review->comment}}</p>
+        <p class="main__left-review-card-comment">{!! nl2br(e($review->comment)) !!}</p>
       </div>
       @endforeach
     </div>

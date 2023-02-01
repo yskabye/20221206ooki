@@ -21,6 +21,7 @@ class CreatePromotesTable extends Migration
             $table->timestamp('send_at')->nullable();
             $table->timestamps();
             $table->foreign('restrant_id')->references('id')->on('restrants');
+            $table->unique('restrant_id');
         });
     }
 

@@ -1,8 +1,8 @@
-/* index */
+/* 全体 */
 
 body{
   background: #eeeeee;
-  margin: 30px 100px;
+  margin: 30px calc(50vw - 790px);
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -29,7 +29,7 @@ body{
 .header__right-box{
   padding: 3px;
   background: white;
-  border: 1px #e0e0e0 solid;
+  border: 1px solid #e0e0e0;
   border-radius: 5px 5px 5px 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
   vertical-align: middle;
@@ -44,14 +44,14 @@ body{
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  background-image: url(../images/down16.png);
+  background-image: url(../images/down16.jpg);
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 13px 13px;
   background-color: white;
   font-size: 13px; 
   position: relative;
-  border-right: 1px #efefef solid;
+  border-right: 1px solid #efefef;
   color: #2f2f2f;
 }
 
@@ -82,19 +82,39 @@ body{
 .list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 25px 15px;
-  width: 100%;
+  width: 1560px;
+  margin: 0 auto;
 }
 
-/* dummy box */
-.dummybox{
-  display: none ;
+@media screen and (max-width:1619px) {
+  body {
+    margin: 30px calc(50vw - 630px);
+  }
+
+  .list {
+    width: 1245px;
+  }
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width:1304px) {
+  body {
+    margin: 30px calc(50vw - 475px);
+  }
+
+  .list {
+    width: 930px;
+  }
+}
+
+@media screen and (max-width:989px) {
+  body {
+    margin: 30px calc(50vw - 315px);
+  }
+
   .header {
     flex-flow: column;
+    width:100%;
   }
 
   .header__right {
@@ -102,19 +122,25 @@ body{
   }
 
   .header__right-box {
-    margin: 10px 0 0 auto;
+    margin: 10px 0 0 0;
+  }
+
+  .header__right-box-select {
+    width: 110px;
+  }
+
+  .header__right-box-inp input {
+    width: 340px;
+  }
+
+  .list {
+    width: 615px;
   }
 }
 
-@media screen and (max-width:860px) {
+@media screen and (max-width:675px) {
   body {
-    margin: 30px 50px;
-  }
-}
-
-@media screen and (max-width:668px) {
-  body {
-    margin: 30px 30px;
+    margin: 30px calc(50vw - 150px);
   }
 
   .header__right-box{
@@ -146,9 +172,7 @@ body{
   }
 
   .list {
-    gap: 10px 10px;
-    flex-wrap: none;
-    justify-content: center;
+    width:300px;
   }
 
   .header__right-box-inp input {
@@ -156,7 +180,26 @@ body{
   }
 }
 
+@media screen and (max-width:360px) {
+  body {
+    margin: 30px 0;
+  }
+
+  .header {
+    width: 300px;
+  }
+
+  .header__left{
+    margin-left: calc(170px - 50%)
+  }
+}
+
+
 @media screen and (max-width:300px) {
+  .header {
+    width: 100%;
+  }
+
   .header__right-box-select {
     width: 99.2%;
     border-right: none;
@@ -188,6 +231,10 @@ body{
     position: absolute;
     top: -33px;
     left: 5px;
+  }
+
+  .list{
+    width:100%;
   }
 
 }

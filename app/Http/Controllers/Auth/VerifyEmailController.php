@@ -18,7 +18,6 @@ class VerifyEmailController extends Controller
     public function __invoke(EmailVerificationRequest $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
-            //return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
             return view('thanks');
         }
 
@@ -26,7 +25,6 @@ class VerifyEmailController extends Controller
             event(new Verified($request->user()));
         }
 
-        //return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
         return view('thanks');
     }
 }

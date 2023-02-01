@@ -30,13 +30,13 @@ class RestrantRequest extends FormRequest
             'overview' => ['required', 'max:191'],
             'image' => ['required', 'max:191'],
             'period' => ['required', 'integer', 'min:0', 'max:30'],
-            'limit' => ['required', 'integer', 'min:1', 'max:60'],
+            'limit' => ['required', 'integer', 'min:1', 'max:90'],
             'holiday' => ['required'],
             'rsv_start' => ['required', 'date_format:H:i'],
             'rsv_end' => ['required', 'date_format:H:i', 'after:rsv_start'],
             'timespan' => ['required'],
             'rsv_min' => ['required', 'integer', 'min:1', 'max:'.$this['rsv_max']],
-            'rsv_max' => ['required', 'integer', 'min:'.$this['rsv_min'], 'max:30'],
+            'rsv_max' => ['required', 'integer', 'min:'.$this['rsv_min'], 'max:999'],
             'upfile' => ['file'],
         ];
     }

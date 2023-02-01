@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\RestrantRequest;
 use App\Models\Restrant;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Carbon\Carbon;
 
 define("IMAGEDIR", "../public/storage/images");
 
@@ -25,7 +25,7 @@ class RestrantController extends Controller
 
         $shops = Restrant::with('area')->with('genre')->get();
 
-        $db_data = Favorite::where('user_id', ($user == null ? 0 : $user))
+        $db_data = Favorite::where('user_id', ($user == null ? 0 : $user->id))
             ->orderBy('restrant_id')->get();
 
         $favorites = [];
@@ -106,7 +106,7 @@ class RestrantController extends Controller
         return view('detail', ['user' => $user, 'shop' => $shop, 'reviews' => $pagination]);
     }
 
-    public function editstore()
+    public function editstore(Request $request)
     {
         $user = Auth::user();
         if(empty($user->restrant_id)) {

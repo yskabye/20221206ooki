@@ -16,13 +16,16 @@ class FavoriteController extends Controller
 
         $reserves = Reserve::with('restrant')
             ->where('user_id', $user->id)
-            ->where('reserve_date', '>=', Carbon::now())
+            ->where('reserve_date', '>=', Carbon::today())
+            ->orderBy('reserve_date')
+            ->orderBy('reserve_time')
             ->orderBy('reserves.id')
             ->get();
-
+        
         foreach ($reserves as $reserve) {
             $reserve->reserve_date = new Carbon($reserve->reserve_date);
             $reserve->reserve_time = new Carbon($reserve->reserve_time);
+            if(!empty($reserve->visit_at)) $reserve->visit_at = new Carbon($reserve->visit_at);
         }
 
         $sql = 'select favorites.id, favorites.user_id, favorites.restrant_id, ' .

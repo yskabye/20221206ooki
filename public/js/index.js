@@ -1,17 +1,5 @@
 $(window).on("load", function() {
-	// 再度、横幅と高さを取得
-	width = $(window).width();
-  height = $(window).height();
-  
-  adjustDummy(width);
-});
-
-$(window).on("resize", function () {
-	// 再度、横幅と高さを取得
-	width = $(window).width();
-  height = $(window).height();
-  
-  adjustDummy(width);
+  var allnum = $('input[name="allnum"]').val();
 });
 
 $('select[name="area_id"]').change(function () {
@@ -26,7 +14,6 @@ $('input[name="word"]').keyup(function () {
   displayBox();
 });
 
-/*$('.hearton').click(function () {*/
 $('.heart').click(function () {
   var button = $(this);
   $(this).prop("disabled", true);
@@ -55,7 +42,7 @@ $('.heart').click(function () {
       button.removeClass('heart_on');
       button.addClass('heart_off');
     } else {
-      key.val(data.data['id']);    // キーをセットする1
+      key.val(data.data['id']);
       button.removeClass('heart_off');
       button.addClass('heart_on');     
     }
@@ -71,10 +58,13 @@ function displayBox() {
   var genre_id = $('select[name="genre_id"]').val();
   var word = $('input[name="word"]').val();
 
+  var allnum = 0;
+
   for (var i = 0; i < elements.length; i ++) {
     var status = selectBox(i, area_id, genre_id, word);
     if (status) {
       $('#box' + i).show();
+      allnum++;
     } else {
       $('#box' + i).hide();
     }
@@ -99,24 +89,4 @@ function selectBox(num, area_id, genre_id, word)
   }
 
   return true;
-}
-
-function adjustDummy(width) {
-  var cut = 1;
-  if (width >= 1760)
-    cut = 5;
-  else if (width >= 1445)
-    cut = 4;
-  else if (width >= 1130)
-    cut = 3;
-  else if (width >= 670)
-    cut = 2;
-  
-  var allnum = $('input[name="allnum"]').val();
-  
-  var remain = allnum % cut;
-  if (remain > 0) {
-    $('.dummybox').css('display','block');
-    $('.dummybox').width( 300 * (cut - remain));
-  }
 }

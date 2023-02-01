@@ -31,11 +31,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get ('/mypage', [FavoriteController::class, 'mypage']);
     Route::get ('/update', [ReserveController::class, 'correct']);
     Route::post('/redone', [ReserveController::class, 'update']);
-    Route::get ('/history', [ReviewController::class, 'dsphistory']); // 評価システム 2022/12/26
+    Route::get ('/history', [ReviewController::class, 'dsphistory']);
+
+    Route::get ('/qrcode/{id}', [ReserveController::class,'qrcode']);
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    // 管理画面 2022/12/27 Start
     Route::get ('/admin/rsv_list',   [ReserveController::class, 'listing']);
     Route::get ('/admin/store_edit', [RestrantController::class, 'editstore']);
     Route::post('/admin/store_upd',  [RestrantController::class, 'update']);
@@ -43,12 +44,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get ('/admin/user_list', [UserController::class, 'index']);
     Route::get ('/admin/user_edit', [UserController::class, 'edit']);
     Route::post('/admin/user_upd',  [UserController::class, 'update']);
-    // 管理画面 2022/12/27 End
-    // Mailingl機能  2023/01/21 start
+
     Route::get ('/admin/mailing',  [MailingController::class, 'index']);
     Route::post('/admin/mailsave', [MailingController::class, 'update']);
     Route::post('/admin/mailsend', [MailingController::class, 'sendmail']);
-    // Mailingl機能  2023/01/21 end
+
+    Route::get ('/admin/qrreader', [ReserveController::class,'zoomin']);
+    Route::get ('/admin/checkin',  [ReserveController::class,'checkin']);
 });
 
 require __DIR__ . '/auth.php';

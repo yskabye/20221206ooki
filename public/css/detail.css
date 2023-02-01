@@ -1,8 +1,8 @@
-/* index */
+/* 全体 */
 
 body {
   background: #eeeeee;
-  margin: 40px 100px;
+  margin: 40px calc(50% - 640px);
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -127,6 +127,7 @@ body {
   margin: 10px 0 0 10px;
   width: 95%;
   padding: 10px 10px;
+  line-height: 125%;
 }
 
 /* main -right */
@@ -151,7 +152,7 @@ body {
 .main__right-form input{
   width: 150px;
   border-radius: 5px;
-  border:1px #cfcfcf solid;
+  border:1px solid #cfcfcf;
   margin: 25px 0 5px;
   padding: 5px 10px;
   display: block;
@@ -159,9 +160,9 @@ body {
 }
 
 .main__right-form select {
-  width: 95%;
+  width: 93%;
   border-radius: 5px;
-  border: 1px #cfcfcf solid;
+  border: 1px solid #cfcfcf;
   margin: 15px 0 5px;
   padding: 7px 10px;
   height: 32px;
@@ -170,7 +171,7 @@ body {
   background: white;
   -webkit-appearance: none;
   appearance: none;
-  background-image: url(../images/down16.png);
+  background-image: url(../images/down16.jpg);
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 13px 13px;
@@ -231,6 +232,7 @@ body {
 }
 
 /* pagenation */
+
 .pagination {
   display: flex;
   padding-right: 0;
@@ -301,13 +303,17 @@ body {
 }
 
 
-@media screen and (max-width:1180px) {
+@media screen and (max-width:1360px) {
   body {
     margin: 40px 40px;
   }
 }
 
-@media screen and (max-width:1160px) {
+@media screen and (max-width:1060px) {
+  body {
+      margin: 40px calc(50vw - 320px);
+  }
+
   .main {
     display: flex;
     flex-direction: column;
@@ -342,6 +348,12 @@ body {
   }
 }
 
+@media screen and (max-width:720px) {
+  body {
+    margin: 40px 40px;
+  }
+}
+
 @media screen and (max-width:490px) {
   body {
     margin: 40px 0px;
@@ -354,7 +366,6 @@ body {
   .main__left-guide{
     margin-left: 20px;
   }
-
 
   .main__left-detail-key{
     margin-left: 5px;    
@@ -397,6 +408,18 @@ body {
 
   .main__left-review-card-comment{
     margin: 0;
+  }
+
+  .main__right-form select {
+    width: 100%;
+  }
+
+  .main__right-form-result {
+    width: 100%;
+  }
+
+  .main__right-form-result-box-line label {
+    width: 80px;
   }
 
 }

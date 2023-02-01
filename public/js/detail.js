@@ -36,7 +36,6 @@ $('select[name="people_num"]').change(function() {
   $('#inp_num').text($('select[name="people_num"]').val() + "人");
 });
 
-// Submit可能であるかをチェックする
 $('form').submit(function (e) {
   if ($('#err_holiday').is(":visible")) {
     return e.preventDefault();

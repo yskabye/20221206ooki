@@ -31,27 +31,25 @@
   <form method="get" action="./rsv_list" class="main__search">
     @csrf
     <div class="main__search-input">
-      <div class="main__search-input-left">
-        <div class="main__search-input-left-date">
-          <div class="main__search-input-left-date-str">
-            <label>予 約 日:</label>
-            <input type="date" name="str_date" value="{{empty($key['str_date'])?old('str_date'):$key['str_date']}}">
-          </div>
-          <div class="main__search-input-left-date-end">
-            <p>〜</p>
-            <input type="date" name="end_date" value="{{empty($key['end_date'])?old('end_date'):$key['end_date']}}">
-          </div>
+      <div class="main__search-input-date">
+        <div class="main__search-input-date-str">
+          <label>予 約 日:</label>
+          <input type="date" name="str_date" value="{{empty($key['str_date'])?old('str_date'):$key['str_date']}}">
         </div>
+        <div class="main__search-input-date-end">
+          <p>〜</p>
+          <input type="date" name="end_date" value="{{empty($key['end_date'])?old('end_date'):$key['end_date']}}">
+        </div>
+      </div>
 
-        <div class="main__search-input-left-time">
-          <div class="main__search-input-left-time-str">
-            <label>予約時間:</label>
-            <input type="time" name="str_time" value="{{empty($key['str_time'])?old('str_time'):$key['str_time']}}" step="{{$timespan}}">
-          </div>
-          <div class="main__search-input-left-time-end">
-            <p>〜</p>
-            <input type="time" name="end_time" value="{{empty($key['end_time'])?old('end_time'):$key['end_time']}}" step="{{$timespan}}">
-          </div>
+      <div class="main__search-input-time">
+        <div class="main__search-input-time-str">
+          <label>予約時間:</label>
+          <input type="time" name="str_time" value="{{empty($key['str_time'])?old('str_time'):$key['str_time']}}" step="{{$timespan}}">
+        </div>
+        <div class="main__search-input-time-end">
+          <p>〜</p>
+          <input type="time" name="end_time" value="{{empty($key['end_time'])?old('end_time'):$key['end_time']}}" step="{{$timespan}}">
         </div>
       </div>
     </div>
@@ -82,9 +80,9 @@
       </div>
     </div>
   </div>
+</div>
 
 @endsection
 @section('js2')
-<script src="../../js/rsvlist.js"></script>
 <script src="../../js/navi.js"></script>
 @endsection

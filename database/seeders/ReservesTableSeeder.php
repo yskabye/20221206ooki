@@ -121,5 +121,14 @@ class ReservesTableSeeder extends Seeder
             'people_num' => 1,
         ];
         Reserve::create($param);
+        
+        $param = [
+            'user_id' => 19,
+            'restrant_id' => 2,
+            'reserve_date' => '2023/01/30',
+            'reserve_time' => '18:30',
+            'people_num' => 3,
+        ];
+        Reserve::create($param);
     }
 }

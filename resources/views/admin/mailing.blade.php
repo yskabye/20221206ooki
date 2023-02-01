@@ -44,8 +44,6 @@
   <div class="main__btn">
     <button type="submit" formaction="/admin/mailsave" class="main__btn-savebtn"></button>
     <button type="button" formaction="/admin/mailsend" class="main__btn-sendbtn"></button>
-    <!--button type="submit" formaction="/admin/mailsend" class="main__btn-sendbtn"></button-->
-    
   </div>
 
   @if ($errors->any())

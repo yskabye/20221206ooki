@@ -17,6 +17,7 @@ class Reserve extends Model
         'reserve_time',
         'restrant_id',
         'people_num',
+        'visit_at',
         'liquid_id',
     ];
 

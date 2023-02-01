@@ -1,3 +1,5 @@
+/* 全体 */
+
 body {
   background: #eeeeee;
   margin: 30px 100px;
@@ -7,12 +9,11 @@ body {
 /* header */
 
 .header {
-  display: flex;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
 }
 
 .header__corp {
-  margin: 12px 0 0 25px;
+  margin: -25px 0 0 50px;
   font-family: 'Chivo', sans-serif;
   font-size: 35px;
   font-weight: 700;
@@ -79,7 +80,6 @@ body {
   .header {
     margin-left: 0 ;
   }
-
 }
 
 @media screen and (max-width:520px) {
@@ -88,7 +88,7 @@ body {
   }
 
   .header {
-    margin-left: 20px;
+    margin-left: 30px;
   }
 }
 
@@ -116,7 +116,7 @@ body {
 
 @media screen and (max-height:320px) {
   .main {
-      margin-top: 25px;
-      overflow-y: auto;
-    }
+    margin-top: 25px;
+    overflow-y: auto;
+  }
 }

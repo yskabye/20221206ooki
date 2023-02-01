@@ -7,14 +7,14 @@ use App\Models\Review;
 
 class ReviewTableSeeder extends Seeder
 {
-    /**
+     /**
      * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        /*$param = [
+        $param = [
                 'reserve_id' => 1,
                 'values' => 4,
                 'comment' => '久々にゆっくりくつろいで、食事できました。\nまた、行きたいですね。',
@@ -33,7 +33,7 @@ class ReviewTableSeeder extends Seeder
                 'values' => 3,
                 'comment' => '至って、普通に美味しかったですよ。',
         ];
-        Review::create($param);*/
+        Review::create($param);
 
         $param = [
                 'reserve_id' => 11,

@@ -1,4 +1,4 @@
-/* index */
+/* 全体 */
 
 body{
   background: #eeeeee;
@@ -9,7 +9,7 @@ body{
 /* header */
 
 .header{
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
 }
 
 .header__mark-corp{
@@ -63,48 +63,48 @@ body{
   width: 92%;
 }
 
-.main__search-input-left-time,
-.main__search-input-left-date{
+.main__search-input-time,
+.main__search-input-date{
   display: flex;
 }
 
-.main__search-input-left-date-str,
-.main__search-input-left-date-end,
-.main__search-input-left-time-str,
-.main__search-input-left-time-end{
+.main__search-input-date-str,
+.main__search-input-date-end,
+.main__search-input-time-str,
+.main__search-input-time-end{
   display: inline-block;
 }
 
-.main__search-input-left-date,
-.main__search-input-left-time{
+.main__search-input-date,
+.main__search-input-time{
   display: inline-block;
 }
 
-.main__search-input-left-date-end p,
-.main__search-input-left-time-end p {
+.main__search-input-date-end p,
+.main__search-input-time-end p {
   display:inline;
   margin: 0 3px;
 }
 
-.main__search-input-left-date-str label,
-.main__search-input-left-time-str label{
+.main__search-input-date-str label,
+.main__search-input-time-str label{
   margin-right: 4px;
   vertical-align: middle;
   margin-left:15px;
 }
 
-.main__search-input-left-date input{
+.main__search-input-date input{
   height: 27px;
-  border:1px #cfcfcf solid;
+  border:1px solid #cfcfcf;
   border-radius: 5px;
   padding-left: 5px;
   width: 107px;
   font-size: 13px;
 }
 
-.main__search-input-left-time input{
+.main__search-input-time input{
   height: 32px;
-  border:1px #cfcfcf solid;
+  border:1px solid #cfcfcf;
   border-radius: 5px;
   padding-left: 5px;
   width: 70px;
@@ -117,8 +117,7 @@ body{
 }
 
 .main__search-btn button {
-  background: white;
-  background-image: url(../images/loupe2.png);
+  background-image: url(../images/loupe2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 32px;
@@ -129,8 +128,7 @@ body{
 }
 
 .main__search-btn button:hover {
-  background: yellow;
-  background-image: url(../images/loupe2.png);
+  background-image: url(../images/loupe2_y.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
@@ -221,101 +219,38 @@ body{
   }
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width:780px) {
   body {
-    margin: 30px 10px;
+    margin: 30px 0;
   }
+  
+  .header {
+    margin: 0 0 20px 30px;
+  }
+}
 
+@media screen and (max-width:720px) {
   .main {
-    width: 600px;
+    width: 100%;
   }
 
   .main__search{
     height: 80px;
   }
 
-  .main__search-input-left-time{
+  .main__search-input-time{
     margin-top: 10px;
   }
 }
 
-@media screen and (max-width:640px) {
-  body {
-    margin: 30px 10px;
-  }
-
-  .store {
-    padding: 30px 0 50px;
-  }
-
-  .main {
-    width: 600px;
-  }
-}
-
-@media screen and (max-width:620px) {
-  .main {
-    width: 530px;
-  }
-
-  .main__table-header {
-    padding: 0 10px;
-  }
-
-  .main__table hr{
-    width: 675px;
-  }
-
-  .main__table-lists {
-    background: #305dff;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 10px;
-  }
-
-  .main__table-header p:nth-child(2) {
-    padding: 0 15px;
-  }
-
-  .main__table-lists-list p:nth-of-type(2) {
-    padding: 0 15px;
-  }
-}
-
 @media screen and (max-width:550px) {
-  body {
-      margin: 30px 0;
-  }
-
-  .header {
-    margin: 0 10px 20px;
-  }
-
   .main {
     margin-left: 0;
     width: 100%;
   }
 }
 
-@media screen and (max-width:530px) {
-  body {
-    margin: 30px 0;
-  }
-
-  .header {
-    margin: 0 20px 20px;
-  }
-
-  .main {
-    margin-left: 0px;
-  }
-}
-
-@media screen and (max-width:440px) {
-  .header {
-    margin: 0 20px 20px;
-  }
-
+@media screen and (max-width:420px) {
   .main {
     width: 100vw;
     margin-right:0 ;
@@ -330,12 +265,12 @@ body{
     width: calc(100vw - 20px);
   }
 
-  .main__search-input-left-date {
+  .main__search-input-date {
     flex-flow: column;
   }
 
-  .main__search-input-left-date-end{
-    margin: 5px 0 0 80px;
+  .main__search-input-date-end{
+    margin: 5px 0 0 55px;
   }
 
   .main__table {
@@ -406,21 +341,20 @@ body{
   }
 }
 
-@media screen and (max-width:300px) {
+@media screen and (max-width:334px) {
   .store{
     flex-flow: column;
   }
 
   .main__search {
     height: 150px;
-    width: 100vw;
   }
 
-  .main__search-input-left-time {
+  .main__search-input-time {
     flex-flow: column;
   }
 
-  .main__search-input-left-time-end {
-    margin: 5px 0 0 80px;
+  .main__search-input-time-end {
+    margin: 5px 0 0 64px;
   }
 }

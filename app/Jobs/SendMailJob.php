@@ -20,15 +20,17 @@ class SendMailJob implements ShouldQueue
      *
      * @return void
      */
-    protected $to;
+    protected $email;
     protected $from;
+    protected $custname;
     protected $name;
     protected $subject;
     protected $message;
 
-    public function __construct($to, $from, $name, $subject, $message)
+    public function __construct($email, $custname, $from, $name, $subject, $message)
     {
-        $this->to = $to;
+        $this->email = $email;
+        $this->custname = $custname;
         $this->from = $from;
         $this->name = $name;
         $this->subject = $subject;
@@ -42,6 +44,8 @@ class SendMailJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->to)->send(new PromoteMail($this->from, $this->name, $this->subject, $this->message));
+        $to = [['email' => $this->email, 'name' => $this->custname . " 様"]];
+
+        Mail::to($to)->send(new PromoteMail($this->from, $this->name, $this->subject, $this->message));
     }
 }

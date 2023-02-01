@@ -14,15 +14,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        /*$param = [
+        $param = [
             'name' => '管理者',
             'email' => 'admin@rese.co.jp',
             'password' => bcrypt('password'),
             'type_id'  => 9
         ];
-        User::create($param);*/
+        User::create($param);
 
-        /*$param = [
+        $param = [
             'name' => '青木 道康',
             'email' => 'store01@rese.co.jp',
             'password' => bcrypt('password'),
@@ -164,7 +164,7 @@ class UsersTableSeeder extends Seeder
             'type_id'  => 5,
             'restrant_id' => 16,
         ];
-        User::create($param);*/
+        User::create($param);
 
         $param = [
             'name' => '高瀬 友美',
@@ -221,7 +221,5 @@ class UsersTableSeeder extends Seeder
             'type_id'  => 0,
         ];
         User::create($param);
-
-
     }
 }
