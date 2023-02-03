@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\validation\Rule;
+use Illuminate\Validation\Rule;
 
 class UserRequest extends FormRequest
 {
