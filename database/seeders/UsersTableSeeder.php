@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         ];
         User::create($param);
 
-        $param = [
+        /*$param = [
             'name' => '青木 道康',
             'email' => 'store01@rese.co.jp',
             'password' => bcrypt('password'),
@@ -220,6 +220,6 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'type_id'  => 0,
         ];
-        User::create($param);
+        User::create($param);*/
     }
 }

@@ -81,6 +81,7 @@
 
   @endsection
   @section('js2')
+  <script src="js/jquery.cookie.js"></script>
   <script src="js/index.js"></script>
   <script src="js/navi.js"></script>
   @endsection

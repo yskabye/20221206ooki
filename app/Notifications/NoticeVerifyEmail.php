@@ -19,7 +19,7 @@ class NoticeVerifyEmail extends VerifyEmail
         $verificationUrl = $this->verificationUrl($notifiable);
         
         return (new MailMessage)
-                    ->subject(Lang::get('Verify Email Address'))
+                    ->subject('メールアドレスの確認')
                     ->markdown('emails.verify_email', [
                         'verify_url' => $verificationUrl
                     ]);

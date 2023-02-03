@@ -1,5 +1,44 @@
-$(window).on("load", function() {
+const KEY = "RESE.Favorite";
+  
+$(window).on("load", function () {
   var allnum = $('input[name="allnum"]').val();
+
+  if ($.cookie(KEY) != undefined) {
+    var user_id = $('input[name="user_id"').val();
+    if (user_id != '' && user_id != null) {
+      var keyval = $.cookie(KEY);
+
+      for (var i = 0; i < allnum; i++){
+        if ($('#box' + i + ' input[name="restrant_id"]').val() == keyval) {
+          var button = $('#box' + i + ' .heart_off');
+          if (button.length > 0) {
+            $.ajax({
+              type: 'POST',
+              url: 'api/v1/favorite',
+              data: {
+                'user_id' : user_id,
+                'restrant_id' : keyval,
+              },
+              cashe: false,
+              dataType: "json",
+              scriptCharaset: "utf-8",
+              timespan: 2000,
+            }).done(function (data) {
+                $('#box' + i + ' input[name="favorite_id"]').val(data.data['id']);
+                button.removeClass('heart_off');
+                button.addClass('heart_on'); 
+            }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+              alert(XMLHttpRequest + " " + textStatus + errorThrown) ;
+            });
+
+            break;
+          }
+        }
+      }
+    }
+    
+    $.removeCookie(KEY); 
+  }
 });
 
 $('select[name="area_id"]').change(function () {
@@ -23,7 +62,12 @@ $('.heart').click(function () {
   var restrant_id = parent.find('input[name="restrant_id"]').val();
   var flag = button.hasClass('heart_on');
 
-  if (user_id == null || user_id == '') return;
+  if (user_id == null || user_id == '') {
+    $.removeCookie(KEY); 
+    $.cookie(KEY, restrant_id, { expires: 1 });
+    window.location.href = "/login";
+    return;
+  }
 
   $.ajax({
     type: (flag ? 'DELETE' : 'POST'),

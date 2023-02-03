@@ -63,7 +63,6 @@ class RestrantController extends Controller
         $shop->rsv_start = new Carbon($shop->rsv_start);
         $shop->rsv_end = new Carbon($shop->rsv_end);
 
-        // レビュー追加 2023.1.16
         $sql = "select reviews.values, reviews.comment, users.name, " .
                "reserves.reserve_date, reserves.reserve_time from reviews " .
                "inner join reserves on reserves.id = reviews.reserve_id " .
@@ -71,7 +70,7 @@ class RestrantController extends Controller
                " inner join users on reserves.user_id = users.id " .
                "order by reserves.reserve_date, reserves.reserve_time";
 
-        $reviews = \DB::select($sql,[$id]);
+        $reviews = \DB::select($sql);
         $total = count($reviews);
 
         foreach($reviews as $review){
@@ -86,7 +85,6 @@ class RestrantController extends Controller
             'offset' => $currentPage * $perPage - $perPage
         ]);
 
-        // LengthAwarePaginatorのインタスタンスを取得
         $pagination = new  \Illuminate\Pagination\LengthAwarePaginator(
             $results,
             $total,

@@ -35,6 +35,8 @@ class MailingController extends Controller
 
     public function update(MailRequest $request)
     {
+        $user = Auth::user();
+
         $form = $request->all();
         $form['send_at'] = null ;
         if(empty($request->id)){

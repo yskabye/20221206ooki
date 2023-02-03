@@ -1,5 +1,14 @@
+var fname = '';
+
 $('select[name="image"]').change(function () {
   $('.main__input1-right img').attr('src', '../storage/images/' + $('select[name="image"]').val());
+
+  if (fname != '') {
+    if (fname != $('select[name="image"]').val()){
+      $('#upload').val('');
+      $('select[name="image"]').children('option[value="' + fname + '"]').remove();
+    }
+  }
 });
 
 $('select[name="timespan"]').change(function () {
@@ -19,7 +28,7 @@ $('#upload').change(function (e) {
   }
 
   var path = $('#upload').val();
-  var fname = path.split(/[\\\/]/).pop();
+  fname = path.split(/[\\\/]/).pop();
 
   $('select[name="image"] option').each(function () {
     if (fname == $(this).text()) {

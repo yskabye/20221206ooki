@@ -36,10 +36,15 @@ body {
   padding: 30px 30px;
 }
 
-.main__board-word1,
-.main__board-word2{
+.main__board-word1{
   line-height: 115%;
   color: #3f3f3f;
+}
+
+.main__board-word2 {
+  line-height: 115%;
+  color: #8f8f1f;
+  padding-top: 15px;
 }
 
 .main__board-btn{
